@@ -1,0 +1,24 @@
+{
+  "id": "sess_1778584856346",
+  "name": "when did mahathma gadhiji was born",
+  "project_id": null,
+  "timestamp": "2026-05-14 21:37",
+  "messages": [
+    {
+      "role": "user",
+      "content": "tell me my name"
+    },
+    {
+      "role": "assistant",
+      "content": "❌ Cannot connect to Ollama. Run `ollama serve` in terminal."
+    },
+    {
+      "role": "user",
+      "content": "tell me my name"
+    },
+    {
+      "role": "assistant",
+      "content": "❌ Cannot connect to Ollama. Run `ollama serve` in terminal."
+    }
+  ]
+}

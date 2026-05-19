@@ -1,0 +1,644 @@
+# ATLAS AI — MASTER IMPLEMENTATION PROMPT
+
+# CONTEXTUAL MEMORY + AI VISUALIZATION INTELLIGENCE UPGRADE
+
+You are modifying an already-existing production-ready local AI assistant called "Atlas AI".
+
+========================================================
+IMPORTANT GLOBAL RULES
+======================
+
+VERY IMPORTANT:
+
+* DO NOT redesign the frontend UI.
+* DO NOT remove existing features.
+* DO NOT rewrite the whole project.
+* DO NOT regenerate already existing files unnecessarily.
+* DO NOT break existing APIs.
+* DO NOT modify study tools behavior.
+* DO NOT remove current map generation functionality.
+* DO NOT change the current sidebar layout.
+* DO NOT alter themes or styling.
+* DO NOT change existing project system UX.
+* DO NOT remove local storage system.
+* Preserve all current workflows.
+
+ONLY:
+
+* extend functionality
+* add contextual intelligence
+* improve backend reasoning
+* add semantic retrieval
+* add execution permission layer
+* improve graph/map generation intelligence
+
+You MUST analyze the existing codebase first before modifying anything.
+
+If files already exist:
+
+* modify them minimally
+* extend logic carefully
+* reuse current architecture
+
+Avoid duplicate systems.
+
+========================================================
+CURRENT SYSTEM OVERVIEW
+=======================
+
+Atlas AI already includes:
+
+1. Local LLM chat using Ollama + qwen2.5:7b
+2. Persistent chats
+3. Projects system
+4. Notes system
+5. Choropleth map generator
+6. CSV uploads
+7. Study tools
+8. RAG document injection
+9. Map history
+10. Chat editing
+11. Local filesystem storage
+12. Auto map mode switching
+
+The current project is FUNCTIONAL.
+
+Your task:
+UPGRADE intelligence WITHOUT changing user experience.
+
+========================================================
+MAIN OBJECTIVE
+==============
+
+Transform Atlas AI from:
+
+"chatbot + map tool"
+
+into:
+
+"semantic contextual AI workspace assistant"
+
+The AI should:
+
+* understand references to previous chats
+* retrieve old CSVs automatically
+* relate images/files/chats together
+* generate intelligent graph titles
+* ask permission before external execution
+* maintain contextual continuity
+
+========================================================
+FEATURE 1 — SEMANTIC CONTEXT RELATIONSHIP ENGINE
+================================================
+
+GOAL:
+Allow the AI to understand references like:
+
+* "use above csv"
+* "generate graph from previous data"
+* "use last uploaded file"
+* "convert previous map to pie chart"
+* "use the second image"
+* "continue previous graph"
+
+WITHOUT requiring the user to resend data.
+
+---
+
+## IMPLEMENTATION REQUIREMENTS
+
+1. Add semantic retrieval system.
+
+Use:
+
+* sentence-transformers embeddings
+  OR
+* Ollama embeddings if available
+
+Recommended embedding model:
+
+* nomic-embed-text
+  OR
+* all-MiniLM-L6-v2
+
+2. Add vector database.
+
+Preferred:
+
+* FAISS (local)
+  Fallback:
+* ChromaDB
+
+3. Every chat message should include:
+
+{
+id,
+chat_id,
+role,
+content,
+timestamp,
+attachments,
+embeddings,
+metadata
+}
+
+4. Store embeddings automatically.
+
+Whenever:
+
+* user sends message
+* AI responds
+* file uploaded
+* CSV uploaded
+* map generated
+
+5. Build semantic retrieval pipeline.
+
+Workflow:
+
+User Prompt
+↓
+Intent Detection
+↓
+Retrieve Relevant Messages
+↓
+Inject Context
+↓
+Generate Response
+
+6. Retrieval should support:
+
+* CSV
+* markdown tables
+* JSON
+* maps
+* images
+* notes
+* project files
+
+7. Add reference resolution logic.
+
+Examples:
+
+"above csv"
+→ nearest CSV message
+
+"previous map"
+→ latest generated map
+
+"second image"
+→ uploaded image index
+
+========================================================
+FEATURE 2 — AI TITLE GENERATION
+===============================
+
+CURRENT ISSUE:
+Titles copy user prompts directly.
+
+This must be replaced with:
+AI semantic title generation.
+
+---
+
+## REQUIREMENTS
+
+1. Analyze dataset structure.
+
+Infer:
+
+* columns
+* relationships
+* category types
+* numerical fields
+
+2. Generate:
+
+* professional chart title
+* x-axis label
+* y-axis label
+* optional subtitle
+
+3. NEVER copy user prompt directly.
+
+BAD:
+"Generate graph from above CSV"
+
+GOOD:
+"Karnataka District Population Distribution"
+
+4. Implement chart-type inference.
+
+Examples:
+
+Categorical + numerical
+→ Bar chart
+
+Time-series
+→ Line graph
+
+Percentage distribution
+→ Pie chart
+
+Geographic district data
+→ Choropleth map
+
+5. Add metadata generator service.
+
+Suggested file:
+
+backend/services/metadata_generator.py
+
+========================================================
+FEATURE 3 — EXTERNAL EXECUTION PERMISSION SYSTEM
+================================================
+
+Before running:
+
+* Python
+* matplotlib
+* pandas
+* plotly
+* map generators
+* code execution
+
+the AI MUST ask user permission.
+
+---
+
+## PERMISSION FLOW
+
+Assistant:
+"This operation requires external tools/programs to generate the visualization. Allow execution?"
+
+ONLY proceed if user confirms:
+
+Accepted:
+
+* yes
+* allow
+* proceed
+* continue
+* ok
+
+If denied:
+
+"I cannot generate the visualization without external execution tools."
+
+---
+
+## IMPLEMENTATION
+
+Add:
+
+* permission middleware
+* execution guard
+* temporary approval state
+
+Store pending action temporarily until approval.
+
+========================================================
+FEATURE 4 — CONTEXTUAL MAP CONTINUITY
+=====================================
+
+Allow:
+
+"Update previous Karnataka map using 2026 data"
+
+System should:
+
+* locate old map
+* locate old CSV
+* compare structure
+* regenerate map intelligently
+
+Also support:
+
+* "change previous graph color to blue"
+* "convert previous graph to pie chart"
+* "make same graph but horizontal"
+
+========================================================
+FEATURE 5 — IMAGE RELATIONSHIP MEMORY
+=====================================
+
+Support:
+
+* "use second image"
+* "merge previous image"
+* "replace image from earlier"
+
+Maintain image metadata:
+
+{
+image_id,
+upload_order,
+timestamp,
+related_chat
+}
+
+========================================================
+FEATURE 6 — LONG-TERM PROJECT MEMORY
+====================================
+
+Upgrade existing project system.
+
+Current project memory exists.
+
+Add:
+
+* semantic document retrieval
+* vector indexing for uploaded documents
+* contextual chunk injection
+
+Use:
+
+* chunking
+* embeddings
+* similarity search
+
+DO NOT change project UI.
+
+========================================================
+FEATURE 7 — BACKEND ARCHITECTURE
+================================
+
+Maintain existing structure.
+
+ONLY extend.
+
+---
+
+## SUGGESTED NEW MODULES
+
+backend/
+│
+├── services/
+│   ├── context_engine.py
+│   ├── embedding_service.py
+│   ├── retrieval_engine.py
+│   ├── metadata_generator.py
+│   ├── permission_manager.py
+│   ├── visualization_engine.py
+│   ├── chart_type_detector.py
+│   └── semantic_memory.py
+│
+├── vectorstore/
+│   ├── faiss_index/
+│   └── embeddings/
+│
+├── middleware/
+│   └── execution_guard.py
+
+========================================================
+FEATURE 8 — FILE REUSE INSTRUCTION
+==================================
+
+IMPORTANT:
+The project already contains many files.
+
+DO NOT:
+
+* recreate existing components
+* duplicate APIs
+* rewrite map generator
+* rewrite project system
+
+Instead:
+
+* inspect current architecture
+* reuse services
+* patch existing logic
+* inject modular enhancements
+
+Modify ONLY where required.
+
+========================================================
+FEATURE 9 — EXECUTION FLOW
+==========================
+
+NEW SYSTEM FLOW:
+
+User Message
+↓
+Intent Detector
+↓
+Context Retrieval
+↓
+Semantic Search
+↓
+Permission Middleware
+↓
+Dataset Extraction
+↓
+Metadata Generation
+↓
+Visualization Planning
+↓
+Python/Map Execution
+↓
+Store Output + Embeddings
+↓
+Respond to User
+
+========================================================
+FEATURE 10 — STORAGE UPGRADE
+============================
+
+Current storage exists.
+
+Upgrade it minimally.
+
+---
+
+## ADD:
+
+storage/
+│
+├── embeddings/
+├── vector_index/
+├── context_cache/
+└── execution_state/
+
+Maintain compatibility with:
+
+* existing JSON chat files
+* existing map history
+* existing projects
+
+========================================================
+TECHNOLOGY REQUIREMENTS
+=======================
+
+Preferred stack:
+
+Backend:
+
+* Python
+* FastAPI or existing backend framework
+
+AI:
+
+* Ollama
+* qwen2.5:7b
+
+Embeddings:
+
+* sentence-transformers
+  OR
+* Ollama embeddings
+
+Vector DB:
+
+* FAISS preferred
+
+Visualization:
+
+* pandas
+* matplotlib
+* geopandas
+* plotly optional
+
+Storage:
+
+* existing local filesystem
+
+========================================================
+DO NOT CHANGE THESE FEATURES
+============================
+
+Keep FULLY working:
+
+* chat system
+* study tools
+* notes
+* projects
+* themes
+* maps
+* uploads
+* sidebar
+* RAG
+* search
+* history
+* downloads
+* local execution
+
+========================================================
+PERFORMANCE REQUIREMENTS
+========================
+
+Optimize for:
+
+* local MacBook execution
+* low RAM usage
+* fast retrieval
+* caching embeddings
+* minimal duplicate embedding generation
+
+========================================================
+STEP-BY-STEP IMPLEMENTATION PLAN
+================================
+
+STEP 1
+Analyze entire existing project architecture.
+
+STEP 2
+Identify reusable systems.
+
+STEP 3
+Add embedding pipeline.
+
+STEP 4
+Add vector search layer.
+
+STEP 5
+Add semantic retrieval engine.
+
+STEP 6
+Add permission middleware.
+
+STEP 7
+Add metadata/title generator.
+
+STEP 8
+Upgrade visualization logic.
+
+STEP 9
+Add contextual continuity.
+
+STEP 10
+Test all existing features.
+
+========================================================
+TESTING REQUIREMENTS
+====================
+
+Verify:
+
+* old chats still work
+* map generation still works
+* projects still work
+* study tools still work
+* no frontend breakage
+* semantic retrieval works
+* permission system works
+* titles generate correctly
+* previous CSV retrieval works
+
+========================================================
+FINAL OUTPUT REQUIRED
+=====================
+
+Provide:
+
+1. Complete upgraded backend
+2. Modified files list
+3. New files list
+4. Dependency updates
+5. Architecture explanation
+6. Setup instructions
+7. Run instructions
+8. Testing instructions
+9. Migration notes
+10. Performance notes
+
+========================================================
+RUN INSTRUCTIONS
+================
+
+Provide exact commands.
+
+Example:
+
+Backend:
+uvicorn app:app --reload
+
+Frontend:
+npm run dev
+
+Ollama:
+ollama run qwen2.5:7b
+
+Embedding model:
+ollama pull nomic-embed-text
+
+========================================================
+EXPECTED FINAL RESULT
+=====================
+
+Atlas AI should behave like:
+
+* contextual memory AI
+* intelligent workspace assistant
+* semantic project assistant
+* AI-powered visualization system
+* local-first agentic AI platform
+
+while preserving:
+
+* current UI
+* current workflows
+* current features
+* current usability
+
+END OF MASTER IMPLEMENTATION PROMPT

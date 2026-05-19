@@ -1,0 +1,40 @@
+{
+  "id": "sess_1777712790583",
+  "name": "hi",
+  "project_id": null,
+  "timestamp": "2026-05-02 14:37",
+  "messages": [
+    {
+      "role": "user",
+      "content": "hi"
+    },
+    {
+      "role": "assistant",
+      "content": "Hello! How can I assist you today? Whether it's with studying, coding, or even creating maps from geographic data, feel free to ask! \ud83c\udf1f"
+    },
+    {
+      "role": "user",
+      "content": "hi"
+    },
+    {
+      "role": "assistant",
+      "content": "Hello! How can I assist you today? Whether it's with studying, coding, or even creating maps from geographic data, feel free to ask! \ud83c\udf1f"
+    },
+    {
+      "role": "user",
+      "content": "choropleath map"
+    },
+    {
+      "role": "assistant",
+      "content": "I can generate a choropleth map! Please upload a CSV file or paste your district data in the **Map Data** panel on the right."
+    },
+    {
+      "role": "user",
+      "content": "generate"
+    },
+    {
+      "role": "assistant",
+      "content": "Map generated!\n\n**District:** District  |  **Value:** GDP_Crore  |  **Color:** Blues"
+    }
+  ]
+}

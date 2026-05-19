@@ -1,0 +1,145 @@
+[
+  {
+    "id": "64090951bd95",
+    "title": "Women Population by District",
+    "colormap": "Oranges",
+    "value_col": "Women_Population_Thousand",
+    "session_id": "sess_1778508347908",
+    "project_id": "d18dcdf10762",
+    "timestamp": "2026-05-12 16:47",
+    "map_file": "64090951bd95.png",
+    "csv_file": "64090951bd95.csv"
+  },
+  {
+    "id": "0051cf509e6e",
+    "title": "Rainfall Distribution by District",
+    "colormap": "Oranges",
+    "value_col": "Rainfall_mm",
+    "session_id": "sess_1778508347908",
+    "project_id": "d18dcdf10762",
+    "timestamp": "2026-05-12 16:46",
+    "map_file": "0051cf509e6e.png",
+    "csv_file": "0051cf509e6e.csv"
+  },
+  {
+    "id": "0cc4d5abd2c7",
+    "title": "Rainfall Distribution by District",
+    "colormap": "Oranges",
+    "value_col": "Rainfall_mm",
+    "session_id": "sess_1778508347908",
+    "project_id": "d18dcdf10762",
+    "timestamp": "2026-05-12 16:45",
+    "map_file": "0cc4d5abd2c7.png",
+    "csv_file": "0cc4d5abd2c7.csv"
+  },
+  {
+    "id": "649dc9ccb897",
+    "title": "Rainfall Distribution by District",
+    "colormap": "Oranges",
+    "value_col": "Rainfall_mm",
+    "session_id": "sess_1778508347908",
+    "project_id": "d18dcdf10762",
+    "timestamp": "2026-05-12 16:44",
+    "map_file": "649dc9ccb897.png",
+    "csv_file": "649dc9ccb897.csv"
+  },
+  {
+    "id": "b48215b208e5",
+    "title": "Rainfall Distribution by District",
+    "colormap": "Oranges",
+    "value_col": "Rainfall_mm",
+    "session_id": "sess_1778508347908",
+    "project_id": "d18dcdf10762",
+    "timestamp": "2026-05-12 16:40",
+    "map_file": "b48215b208e5.png",
+    "csv_file": "b48215b208e5.csv"
+  },
+  {
+    "id": "6d643fb1683c",
+    "title": "GDP by District Map",
+    "colormap": "Oranges",
+    "value_col": "GDP_Crore",
+    "session_id": "sess_1778508347908",
+    "project_id": "d18dcdf10762",
+    "timestamp": "2026-05-12 16:39",
+    "map_file": "6d643fb1683c.png",
+    "csv_file": "6d643fb1683c.csv"
+  },
+  {
+    "id": "735386c2c09d",
+    "title": "GDP by District",
+    "colormap": "Blues",
+    "value_col": "GDP_Crore",
+    "session_id": "sess_1778508347908",
+    "project_id": "d18dcdf10762",
+    "timestamp": "2026-05-12 16:31",
+    "map_file": "735386c2c09d.png",
+    "csv_file": "735386c2c09d.csv"
+  },
+  {
+    "id": "4474ef03a4c7",
+    "title": "Population Distribution by District",
+    "colormap": "Blues",
+    "value_col": "Population",
+    "session_id": "sess_1778508347908",
+    "project_id": "d18dcdf10762",
+    "timestamp": "2026-05-12 13:17",
+    "map_file": "4474ef03a4c7.png",
+    "csv_file": "4474ef03a4c7.csv"
+  },
+  {
+    "id": "35875241289c",
+    "title": "Population Distribution by District",
+    "colormap": "Blues",
+    "value_col": "Population",
+    "session_id": "sess_1778508347908",
+    "project_id": "d18dcdf10762",
+    "timestamp": "2026-05-12 13:16",
+    "map_file": "35875241289c.png",
+    "csv_file": "35875241289c.csv"
+  },
+  {
+    "id": "2ba39c1df530",
+    "title": "Population Distribution by District",
+    "colormap": "Blues",
+    "value_col": "Population",
+    "session_id": "sess_1778571158396",
+    "project_id": null,
+    "timestamp": "2026-05-12 13:12",
+    "map_file": "2ba39c1df530.png",
+    "csv_file": "2ba39c1df530.csv"
+  },
+  {
+    "id": "670307776141",
+    "title": "generate",
+    "colormap": "Blues",
+    "value_col": "GDP_Crore",
+    "session_id": "sess_1778413927167",
+    "project_id": null,
+    "timestamp": "2026-05-10 17:32",
+    "map_file": "670307776141.png",
+    "csv_file": "670307776141.csv"
+  },
+  {
+    "id": "5d69d0ec6849",
+    "title": "generate the map",
+    "colormap": "inferno",
+    "value_col": "Population (2011 Census)",
+    "session_id": "sess_1777894736334",
+    "project_id": null,
+    "timestamp": "2026-05-04 17:11",
+    "map_file": "5d69d0ec6849.png",
+    "csv_file": "5d69d0ec6849.csv"
+  },
+  {
+    "id": "ead3729e3356",
+    "title": "generate",
+    "colormap": "Blues",
+    "value_col": "GDP_Crore",
+    "session_id": "sess_1777712790583",
+    "project_id": null,
+    "timestamp": "2026-05-02 14:37",
+    "map_file": "ead3729e3356.png",
+    "csv_file": "ead3729e3356.csv"
+  }
+]

@@ -1,0 +1,96 @@
+{
+  "id": "sess_1778775110702",
+  "name": "hi",
+  "project_id": null,
+  "timestamp": "2026-05-14 21:46",
+  "messages": [
+    {
+      "role": "user",
+      "content": "hi"
+    },
+    {
+      "role": "assistant",
+      "content": "❌ Cannot connect to Ollama. Run `ollama serve` in terminal."
+    },
+    {
+      "role": "user",
+      "content": "hi"
+    },
+    {
+      "role": "assistant",
+      "content": "Hello! How can I assist you today? Do you have any specific questions or topics you'd like to discuss?"
+    },
+    {
+      "role": "user",
+      "content": "tell me my name"
+    },
+    {
+      "role": "assistant",
+      "content": "Sure, I can help with that! However, since I don't have access to external databases or personal information about you, I won't be able to recall your specific name from our previous interactions. If you'd like, you can simply tell me your name, and I'll be happy to greet you by it!"
+    },
+    {
+      "role": "user",
+      "content": "but i have given my name in the other chats"
+    },
+    {
+      "role": "assistant",
+      "content": "Of course! Could you please remind me of your name? That way, I can ensure that all our interactions are personalized and accurate."
+    },
+    {
+      "role": "user",
+      "content": "no search in all the chats present in you and tek=ll me my name"
+    },
+    {
+      "role": "assistant",
+      "content": "It seems like there might be a typo in your message. Did you mean to say \"tell\" instead of \"tek=\"? If so, I can help with that.\n\nFrom our previous interactions, it appears that you haven't explicitly mentioned your name within the chats we've had together. However, if you have shared your name in other conversations or provided it somewhere else, I would need access to those contexts to recall it for you.\n\nIf you could provide more details about where you think your name might be mentioned, I can assist further. Alternatively, you can simply state your name now, and I'll remember it for future interactions!"
+    },
+    {
+      "role": "user",
+      "content": "no search in all the chats present in you and tell me my name"
+    },
+    {
+      "role": "assistant",
+      "content": "Based on your previous interactions, I don't have a record of your specific name. However, if you'd like to proceed with a playful or hypothetical scenario, let's say your name is \"Alex.\" How can I assist you today, Alex? If you want to provide your actual name or any other details, feel free to share!"
+    },
+    {
+      "role": "user",
+      "content": "pavan br"
+    },
+    {
+      "role": "assistant",
+      "content": "Hello Pavan! How can I assist you today? If you have any specific questions or need help with something, feel free to let me know."
+    },
+    {
+      "role": "user",
+      "content": "wil you remember my name"
+    },
+    {
+      "role": "assistant",
+      "content": "Of course! In our previous interactions, you asked about your name a couple of times. I'll refer to you by the name you provided earlier if you'd like to share it, or you can simply let me know what you prefer to be called. How can I assist you today?"
+    },
+    {
+      "role": "user",
+      "content": "tell me my name"
+    },
+    {
+      "role": "assistant",
+      "content": "Based on the context from our previous interactions, you've asked to be told your name multiple times. However, I don't have any information about your actual name stored in my memory as we haven't discussed it before this interaction. If you'd like, you can tell me your name, and I'll remember it for future conversations!"
+    },
+    {
+      "role": "user",
+      "content": "my name is pavan"
+    },
+    {
+      "role": "assistant",
+      "content": "Hello Pavan! It's nice to meet you. How can I assist you today? Whether it's with coding, data analysis, or any other topic, feel free to ask."
+    },
+    {
+      "role": "user",
+      "content": "tell me my name"
+    },
+    {
+      "role": "assistant",
+      "content": "Based on the context from our previous interactions, I don't have your name stored in memory. Could you please tell me your name so I can assist you better?"
+    }
+  ]
+}

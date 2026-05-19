@@ -1,0 +1,268 @@
+.
+├── architecture.txt
+└── atlas-lms
+    ├── README.md
+    ├── backend
+    │   ├── app.py
+    │   ├── middleware
+    │   │   ├── __pycache__
+    │   │   │   └── execution_guard.cpython-314.pyc
+    │   │   └── execution_guard.py
+    │   ├── requirements.txt
+    │   ├── routes
+    │   │   ├── __init__.py
+    │   │   ├── __pycache__
+    │   │   │   ├── __init__.cpython-314.pyc
+    │   │   │   ├── chat_routes.cpython-314.pyc
+    │   │   │   ├── file_routes.cpython-314.pyc
+    │   │   │   ├── map_routes.cpython-314.pyc
+    │   │   │   ├── project_routes.cpython-314.pyc
+    │   │   │   └── study_routes.cpython-314.pyc
+    │   │   ├── chat_routes.py
+    │   │   ├── file_routes.py
+    │   │   ├── map_routes.py
+    │   │   ├── project_routes.py
+    │   │   └── study_routes.py
+    │   ├── services
+    │   │   ├── __pycache__
+    │   │   │   ├── context_engine.cpython-314.pyc
+    │   │   │   ├── embedding_service.cpython-314.pyc
+    │   │   │   ├── metadata_generator.cpython-314.pyc
+    │   │   │   ├── permission_manager.cpython-314.pyc
+    │   │   │   ├── retrieval_engine.cpython-314.pyc
+    │   │   │   └── semantic_memory.cpython-314.pyc
+    │   │   ├── context_engine.py
+    │   │   ├── embedding_service.py
+    │   │   ├── metadata_generator.py
+    │   │   ├── permission_manager.py
+    │   │   ├── retrieval_engine.py
+    │   │   └── semantic_memory.py
+    │   └── utils
+    │       ├── __init__.py
+    │       ├── __pycache__
+    │       │   ├── __init__.cpython-314.pyc
+    │       │   ├── csv_handler.cpython-314.pyc
+    │       │   ├── llm.cpython-314.pyc
+    │       │   ├── map_generator.cpython-314.pyc
+    │       │   └── storage.cpython-314.pyc
+    │       ├── csv_handler.py
+    │       ├── llm.py
+    │       ├── map_generator.py
+    │       └── storage.py
+    ├── frontend
+    │   ├── index.html
+    │   ├── script.js
+    │   └── style.css
+    ├── prompts.txt
+    └── storage
+        ├── chats
+        │   ├── _index.json
+        │   ├── sess_1777626719035.json
+        │   ├── sess_1777626776224.json
+        │   ├── sess_1777644305321.json
+        │   ├── sess_1777712790583.json
+        │   ├── sess_1777712945936.json
+        │   ├── sess_1777894736334.json
+        │   ├── sess_1777949517697.json
+        │   ├── sess_1777985864219.json
+        │   ├── sess_1778413927167.json
+        │   ├── sess_1778417087933.json
+        │   ├── sess_1778508347908.json
+        │   ├── sess_1778515298984.json
+        │   ├── sess_1778571158396.json
+        │   └── sess_1778584856346.json
+        ├── context_cache
+        │   ├── 07b50df722425b532b70e90cb966fe45.json
+        │   ├── 07d0c4d17dd6621ddd894e3c2ac47fd5.json
+        │   ├── 0c101996c6ca0fc4d61c81f405156aa1.json
+        │   ├── 227eed360f74b77c8f9d09a93e450ac5.json
+        │   ├── 24ea452b0c57c3fa5108fccd20b8072c.json
+        │   ├── 2a21e19563b58ac061b09e590a7158eb.json
+        │   ├── 2abd511906ceaec6f4df1aeebb5810c4.json
+        │   ├── 2d00e7d61a61f8f5b4d2da53a180cfec.json
+        │   ├── 31168275dcaac634489082b54c4c66d0.json
+        │   ├── 3c798c4735dd4255b974f489866938e3.json
+        │   ├── 3f0cb906f4503c41d160e568c0828d37.json
+        │   ├── 3f17d6d02812bb080cebc73c83ce1229.json
+        │   ├── 42676c359a1c44b3fd0290bc13e02d86.json
+        │   ├── 439b560b9759091f01510907295ed1e0.json
+        │   ├── 4480467e487cc3aed7f914af73c4f096.json
+        │   ├── 47f215909a45b081085337b43c4389ca.json
+        │   ├── 4979992aa463c42334aa8bb22d6ed39c.json
+        │   ├── 49f68a5c8493ec2c0bf489821c21fc3b.json
+        │   ├── 4add4239fa82874cf4d7ab14e4f5f8cc.json
+        │   ├── 4b847b18fde48396351340aee952ce45.json
+        │   ├── 519b405886616dc7c28296a82f55135b.json
+        │   ├── 5501013c75adedb25c366141d0777cc3.json
+        │   ├── 6680236f273a66759b09bac8512eeea7.json
+        │   ├── 6ac2a5d65304946188b4d0308b619d9e.json
+        │   ├── 6b77797d43479997ec2d1684de9e8d20.json
+        │   ├── 73fe3e4b92a9cc366881551c07e2abfd.json
+        │   ├── 7b65e1dccddd687594b71406eb2146a5.json
+        │   ├── 807f4b876dcb3874d7c1018656ef4860.json
+        │   ├── 88e9e7dc62a1b848157be5222f72456c.json
+        │   ├── 89e06c93f0b12660ec088823a7bb686d.json
+        │   ├── 8f03a74f1b0a1a17356a98e9d13aeaab.json
+        │   ├── 8f8a0d88cab44966e60f2ab2a93be81c.json
+        │   ├── 911e3535499fb9fb6941d8095d91ef0c.json
+        │   ├── 97761533d9268012a706fcef4783d02b.json
+        │   ├── 99f989e2d0228d03ba34747ad92dc243.json
+        │   ├── a6105c0a611b41b08f1209506350279e.json
+        │   ├── a87316ef53f08bdd080954fd63cd6e42.json
+        │   ├── a96f512989e670b7974f1fe2e07728e0.json
+        │   ├── a9bab01aa300d68977cb6e1dfe19e769.json
+        │   ├── b07825e3cad1a3a335e7e8828e0e40fb.json
+        │   ├── b60fad99ec594a7526b2a8e869f0b538.json
+        │   ├── b9c648bec1bdb03ab75b0d689b76c294.json
+        │   ├── bd22787b989bd506ce798e20b45aae92.json
+        │   ├── c92cff059c1132ff44d23efdcc996cb0.json
+        │   ├── cbc3e1f7829e8ebf7e742d486ab4924a.json
+        │   ├── dcb0c668c9f4d893f3bdb6157cb0db51.json
+        │   ├── e025226efdc39d023654ff07f9424b08.json
+        │   ├── e587f300e005ce34b1ff8ee08b16c49b.json
+        │   ├── eadef3469dc22ce453013b68b4aaa904.json
+        │   ├── ee8f205c444d9788e1c96a4d3bdb0b60.json
+        │   ├── ef0b1446786e9e149c733d68d004e99c.json
+        │   ├── efef9666ea925ecc4cdbce5fc02d8fd1.json
+        │   ├── f13c672e4756dd95305f243b92f16664.json
+        │   ├── f3ec095d4d4118e8708d22140e03b658.json
+        │   ├── f3f589555bc9e66e805c4d9ad712ef75.json
+        │   ├── f54904e75964f740a922757a2aa24d03.json
+        │   ├── f5c458bf3a853bd2af8cf85f4789c5e2.json
+        │   ├── f6346364702947f7f5201e60eedbe0d1.json
+        │   ├── fbdd75069ad26922491bf5a84d31d08d.json
+        │   └── fd89afa19de1cf74ed53771194e3b982.json
+        ├── documents
+        │   ├── d18dcdf10762_4b828423c9c7.csv
+        │   └── d18dcdf10762_docs.json
+        ├── embeddings
+        │   ├── 06cbeb4bee3c.json
+        │   ├── 1ab65ede413e.json
+        │   ├── 1bf98b50d902.json
+        │   ├── 1c74cb50ab0b.json
+        │   ├── 1f80ed5f2bbd.json
+        │   ├── 1fe3a60986a9.json
+        │   ├── 27cfcbf5cf07.json
+        │   ├── 2d1bb91973f2.json
+        │   ├── 2d9aa5e5bcf5.json
+        │   ├── 2eda4a950226.json
+        │   ├── 30a2c26d4ff2.json
+        │   ├── 327948e52d57.json
+        │   ├── 38cbac18102c.json
+        │   ├── 3efdbafaf2d0.json
+        │   ├── 3f87c963ff49.json
+        │   ├── 4306ecd807e7.json
+        │   ├── 4d527c2972a0.json
+        │   ├── 4e4e8970ffe6.json
+        │   ├── 4e831e3d14b1.json
+        │   ├── 4ef169864a36.json
+        │   ├── 50194a20def7.json
+        │   ├── 546367795cd5.json
+        │   ├── 5dceed573e0b.json
+        │   ├── 647957c89ed1.json
+        │   ├── 66e56126f441.json
+        │   ├── 706796ead434.json
+        │   ├── 7291e775ca6f.json
+        │   ├── 7696efde8e65.json
+        │   ├── 76c8ef2de5f5.json
+        │   ├── 76cd248aaae9.json
+        │   ├── 79e98cc82bb8.json
+        │   ├── 7ae89058f23b.json
+        │   ├── 7c515d2b5df7.json
+        │   ├── 7d42d3918246.json
+        │   ├── 829815bba757.json
+        │   ├── 8549ae688f6e.json
+        │   ├── 8b7f27a3854a.json
+        │   ├── 8f2fb8d14a86.json
+        │   ├── 90c2a42d0d9c.json
+        │   ├── 928e4debf2fc.json
+        │   ├── 962a2d79c789.json
+        │   ├── 9631f10d09ba.json
+        │   ├── 9982ec138f21.json
+        │   ├── 9e461a6adca6.json
+        │   ├── a0ec3567408b.json
+        │   ├── a27bfbaccca4.json
+        │   ├── a34dec7ef4a5.json
+        │   ├── a441cef0b2f2.json
+        │   ├── a74400acdfc7.json
+        │   ├── abafdd718b99.json
+        │   ├── ac8296ce7c6c.json
+        │   ├── b33937cffe80.json
+        │   ├── b33a1582358f.json
+        │   ├── b71e60adf39e.json
+        │   ├── bb4855206b7c.json
+        │   ├── c1131a332103.json
+        │   ├── c3edf26e8227.json
+        │   ├── c741b2badb06.json
+        │   ├── c88b6ec7d9dd.json
+        │   ├── c9758a324f60.json
+        │   ├── ca4353906a07.json
+        │   ├── cafa5237dfba.json
+        │   ├── cc398177f0cb.json
+        │   ├── ce136a02774d.json
+        │   ├── cfbcd90b9888.json
+        │   ├── d14a26729f79.json
+        │   ├── d5369618ba58.json
+        │   ├── de03d2c2ab47.json
+        │   ├── de07b049cfd6.json
+        │   ├── e30278830753.json
+        │   ├── e9a727239637.json
+        │   ├── f4ab0a0f5182.json
+        │   ├── f94376ff5fc6.json
+        │   ├── fbee1bb545e9.json
+        │   ├── fc2aba4ec8a9.json
+        │   └── ffb2efaf93d0.json
+        ├── execution_state
+        ├── files
+        ├── history
+        │   ├── 0051cf509e6e.csv
+        │   ├── 0051cf509e6e.png
+        │   ├── 0cc4d5abd2c7.csv
+        │   ├── 0cc4d5abd2c7.png
+        │   ├── 2ba39c1df530.csv
+        │   ├── 2ba39c1df530.png
+        │   ├── 35875241289c.csv
+        │   ├── 35875241289c.png
+        │   ├── 4474ef03a4c7.csv
+        │   ├── 4474ef03a4c7.png
+        │   ├── 5d69d0ec6849.csv
+        │   ├── 5d69d0ec6849.png
+        │   ├── 64090951bd95.csv
+        │   ├── 64090951bd95.png
+        │   ├── 649dc9ccb897.csv
+        │   ├── 649dc9ccb897.png
+        │   ├── 670307776141.csv
+        │   ├── 670307776141.png
+        │   ├── 6d643fb1683c.csv
+        │   ├── 6d643fb1683c.png
+        │   ├── 735386c2c09d.csv
+        │   ├── 735386c2c09d.png
+        │   ├── b48215b208e5.csv
+        │   ├── b48215b208e5.png
+        │   ├── ead3729e3356.csv
+        │   ├── ead3729e3356.png
+        │   └── index.json
+        ├── maps
+        │   └── map_output.png
+        ├── notes
+        ├── projects
+        │   └── index.json
+        └── uploads
+            ├── data_411601bb.csv
+            ├── data_53222f9f.csv
+            ├── data_5647a209.csv
+            ├── data_8fbafa78.csv
+            ├── data_c8ab355e.csv
+            ├── data_e348c26b.csv
+            ├── data_e883606d.csv
+            ├── data_effd69b0.csv
+            ├── data_f26edc64.csv
+            ├── pasted_434e6169.csv
+            ├── pasted_53d51223.csv
+            ├── pasted_5e0792cd.csv
+            ├── pasted_5fd3e29e.csv
+            ├── pasted_791e93c9.csv
+            ├── pasted_8229be93.csv
+            └── pasted_87257383.csv
+
+24 directories, 242 files

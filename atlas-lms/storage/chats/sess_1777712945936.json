@@ -1,0 +1,24 @@
+{
+  "id": "sess_1777712945936",
+  "name": "Generate 5 MCQ questions about Python Flask f",
+  "project_id": null,
+  "timestamp": "2026-05-02 14:39",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Generate 5 MCQ questions about Python Flask framework"
+    },
+    {
+      "role": "assistant",
+      "content": "Sure! Here are five multiple-choice questions about the Python Flask framework:\n\n1. **What is the primary purpose of Flask in web development?**\n   - A) To serve as a database management system\n   - B) To act as a front-end framework for user interfaces\n   - C) To provide a lightweight and flexible web server gateway interface (WSGI)\n   - D) To handle file operations\n\n2. **Which of the following is NOT a core component of Flask?**\n   - A) Request handling\n   - B) Template rendering\n   - C) Database management\n   - D) URL routing\n\n3. **How do you define a route in Flask?**\n   - A) Using `@app.route()`\n   - B) Using `@app.get()`\n   - C) Using `@route()`\n   - D) Using `@url_for()`\n\n4. **Which method is used to render templates in Flask?**\n   - A) `render_template()`\n   - B) `template_render()`\n   - C) `render_file()`\n   - D) `display_template()`\n\n5. **What does the `Flask(__name__)` statement do in a Flask application?**\n   - A) It starts the server\n   - B) It defines the main route of the application\n   - C) It initializes the Flask object and sets its name to the module's name\n   - D) It imports all necessary modules\n\nFeel free to use these questions for your study or quiz!"
+    },
+    {
+      "role": "user",
+      "content": "Generate 5 MCQ questions about Python Flask framework"
+    },
+    {
+      "role": "assistant",
+      "content": "Sure! Here are five multiple-choice questions about the Python Flask framework:\n\n1. **What is the primary purpose of Flask in web development?**\n   - A) To serve as a database management system\n   - B) To act as a front-end framework for user interfaces\n   - C) To provide a lightweight and flexible web server gateway interface (WSGI)\n   - D) To handle file operations\n\n2. **Which of the following is NOT a core component of Flask?**\n   - A) Request handling\n   - B) Template rendering\n   - C) Database management\n   - D) URL routing\n\n3. **How do you define a route in Flask?**\n   - A) Using `@app.route()`\n   - B) Using `@app.get()`\n   - C) Using `@route()`\n   - D) Using `@url_for()`\n\n4. **Which method is used to render templates in Flask?**\n   - A) `render_template()`\n   - B) `template_render()`\n   - C) `render_file()`\n   - D) `display_template()`\n\n5. **What does the `Flask(__name__)` statement do in a Flask application?**\n   - A) It starts the server\n   - B) It defines the main route of the application\n   - C) It initializes the Flask object and sets its name to the module's name\n   - D) It imports all necessary modules\n\nFeel free to use these questions for your study or quiz!"
+    }
+  ]
+}
