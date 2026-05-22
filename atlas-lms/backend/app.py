@@ -10,7 +10,7 @@ CORS(app, resources={r"/*": {"origins": "*"}},
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 STORAGE  = os.path.join(BASE_DIR, "..", "storage")
-for folder in ["chats","maps","projects","files","uploads","history","notes","documents"]:
+for folder in ["chats","maps","projects","files","uploads","history","notes","documents","execution_state"]:
     os.makedirs(os.path.join(STORAGE, folder), exist_ok=True)
 
 from routes.chat_routes    import chat_bp
@@ -45,4 +45,4 @@ if __name__ == "__main__":
     print("  Atlas LMS Backend — http://localhost:5001")
     print("  Health check: http://localhost:5001/api/health")
     print("=" * 55)
-    app.run(debug=True, port=5001, host="0.0.0.0")
+    app.run(debug=True, use_reloader=False, port=5001, host="0.0.0.0")

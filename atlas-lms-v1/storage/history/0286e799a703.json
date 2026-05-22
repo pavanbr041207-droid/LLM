@@ -1,0 +1,28 @@
+{
+  "request_id": "ef3599aed94c",
+  "dataset_id": "5c3331a53549",
+  "map_id": "0286e799a703",
+  "session_id": "sess_1779294252532",
+  "user_prompt": "generate choropleath map for rainfal data of karnataka districts",
+  "execution_metadata": {
+    "title": "Karnataka District Rainfall Distribution",
+    "subtitle": "31 district records",
+    "legend_title": "Rainfall",
+    "dataset_label": "Karnataka District Rainfall",
+    "export_filename": "karnataka_district_rainfall_distribution.png",
+    "region": "Karnataka",
+    "chart_type": "choropleth",
+    "is_geo": true
+  },
+  "dataset": {
+    "district_col": "district",
+    "value_col": "rainfall",
+    "dataset_label": "Karnataka District Rainfall",
+    "source": "atlas_internal_baseline"
+  },
+  "csv_snapshot": "/Users/pavanbr/Desktop/atlas_fixed/atlas-lms/backend/../storage/history/0286e799a703.csv",
+  "map_snapshot": "/Users/pavanbr/Desktop/atlas_fixed/atlas-lms/backend/../storage/history/0286e799a703.png",
+  "output_image": "/Users/pavanbr/Desktop/atlas_fixed/atlas-lms/backend/../storage/maps/0286e799a703_karnataka_district_rainfall_distributionpng.png",
+  "colormap": "Blues",
+  "timestamp": "2026-05-20 21:55"
+}

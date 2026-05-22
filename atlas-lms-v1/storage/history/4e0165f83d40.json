@@ -1,0 +1,30 @@
+{
+  "request_id": "01b6e0bb7d2e",
+  "dataset_id": "b87c2cadfff8",
+  "map_id": "4e0165f83d40",
+  "session_id": "sess_1779417595990",
+  "user_prompt": "generate choropleath map",
+  "execution_metadata": {
+    "title": "GDP by District",
+    "subtitle": "Range: 21.5K — 1.2M · 30 records",
+    "legend_title": "Gdp Crore",
+    "dataset_label": "District District Gdp Crore",
+    "export_filename": "gdp_by_district.png",
+    "x_label": "District",
+    "y_label": "Gdp Crore",
+    "chart_type": "choropleth",
+    "is_geo": true,
+    "region": "District"
+  },
+  "dataset": {
+    "district_col": "District",
+    "value_col": "GDP_Crore",
+    "dataset_label": "District District Gdp Crore",
+    "source": "uploaded_csv"
+  },
+  "csv_snapshot": "/Users/pavanbr/Desktop/choro_final_2/atlas-lms-v1/backend/../storage/history/4e0165f83d40.csv",
+  "map_snapshot": "/Users/pavanbr/Desktop/choro_final_2/atlas-lms-v1/backend/../storage/history/4e0165f83d40.png",
+  "output_image": "/Users/pavanbr/Desktop/choro_final_2/atlas-lms-v1/backend/../storage/maps/4e0165f83d40_gdp_by_districtpng.png",
+  "colormap": "Blues",
+  "timestamp": "2026-05-22 08:11"
+}

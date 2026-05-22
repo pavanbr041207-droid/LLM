@@ -1,0 +1,16 @@
+{
+  "id": "sess_1779293870193",
+  "name": "hi",
+  "project_id": null,
+  "timestamp": "2026-05-20 21:47",
+  "messages": [
+    {
+      "role": "user",
+      "content": "hi"
+    },
+    {
+      "role": "assistant",
+      "content": "❌ Cannot connect to Ollama. Run `ollama serve` in terminal."
+    }
+  ]
+}

@@ -1,5 +1,49 @@
 [
   {
+    "id": "98e2931d289a",
+    "title": "Population Distribution by District",
+    "colormap": "Blues",
+    "value_col": "population",
+    "session_id": "sess_1779293856313",
+    "project_id": null,
+    "timestamp": "2026-05-20 21:50",
+    "map_file": "98e2931d289a.png",
+    "csv_file": "98e2931d289a.csv"
+  },
+  {
+    "id": "e939d81e04fb",
+    "title": "Population Distribution by District",
+    "colormap": "Blues",
+    "value_col": "population",
+    "session_id": "sess_1779205437105",
+    "project_id": null,
+    "timestamp": "2026-05-20 09:38",
+    "map_file": "e939d81e04fb.png",
+    "csv_file": "e939d81e04fb.csv"
+  },
+  {
+    "id": "ff6f23dbace7",
+    "title": "Women Population by District",
+    "colormap": "Blues",
+    "value_col": "Women_Population_Thousand",
+    "session_id": "sess_1779205437105",
+    "project_id": null,
+    "timestamp": "2026-05-19 21:15",
+    "map_file": "ff6f23dbace7.png",
+    "csv_file": "ff6f23dbace7.csv"
+  },
+  {
+    "id": "7f3e162be179",
+    "title": "Women Population by District",
+    "colormap": "Blues",
+    "value_col": "Women_Population_Thousand",
+    "session_id": "sess_1779204806757",
+    "project_id": null,
+    "timestamp": "2026-05-19 21:06",
+    "map_file": "7f3e162be179.png",
+    "csv_file": "7f3e162be179.csv"
+  },
+  {
     "id": "64090951bd95",
     "title": "Women Population by District",
     "colormap": "Oranges",

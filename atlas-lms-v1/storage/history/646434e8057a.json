@@ -1,0 +1,28 @@
+{
+  "request_id": "e7a480378faf",
+  "dataset_id": "dd8d4f5b2eec",
+  "map_id": "646434e8057a",
+  "session_id": "sess_1779294252532",
+  "user_prompt": "generate choropleath map for population of karnataka districts",
+  "execution_metadata": {
+    "title": "Karnataka District Population Distribution",
+    "subtitle": "31 district records",
+    "legend_title": "Population",
+    "dataset_label": "Karnataka District Population",
+    "export_filename": "karnataka_district_population_distribution.png",
+    "region": "Karnataka",
+    "chart_type": "choropleth",
+    "is_geo": true
+  },
+  "dataset": {
+    "district_col": "district",
+    "value_col": "population",
+    "dataset_label": "Karnataka District Population",
+    "source": "atlas_internal_baseline"
+  },
+  "csv_snapshot": "/Users/pavanbr/Desktop/atlas_fixed/atlas-lms/backend/../storage/history/646434e8057a.csv",
+  "map_snapshot": "/Users/pavanbr/Desktop/atlas_fixed/atlas-lms/backend/../storage/history/646434e8057a.png",
+  "output_image": "/Users/pavanbr/Desktop/atlas_fixed/atlas-lms/backend/../storage/maps/646434e8057a_karnataka_district_population_distributionpng.png",
+  "colormap": "Blues",
+  "timestamp": "2026-05-20 21:56"
+}

@@ -74,5 +74,6 @@ Then open Chrome at: http://localhost:3000
 
 http://[::]:3000/atlas-lms/frontend/
 python3 app.py
-
+ 
+cd atlas-lms/frontend
 python3 -m http.server 3000

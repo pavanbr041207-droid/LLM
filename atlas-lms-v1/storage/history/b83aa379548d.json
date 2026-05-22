@@ -1,0 +1,28 @@
+{
+  "request_id": "37a2d0d52442",
+  "dataset_id": "25234a906222",
+  "map_id": "b83aa379548d",
+  "session_id": "sess_1779294246572",
+  "user_prompt": "generate choropleath map for the womens populationn",
+  "execution_metadata": {
+    "title": "Karnataka District Population Distribution",
+    "subtitle": "31 district records",
+    "legend_title": "Population",
+    "dataset_label": "Karnataka District Population",
+    "export_filename": "karnataka_district_population_distribution.png",
+    "region": "Karnataka",
+    "chart_type": "choropleth",
+    "is_geo": true
+  },
+  "dataset": {
+    "district_col": "district",
+    "value_col": "population",
+    "dataset_label": "Karnataka District Population",
+    "source": "atlas_internal_baseline"
+  },
+  "csv_snapshot": "/Users/pavanbr/Desktop/atlas_fixed/atlas-lms/backend/../storage/history/b83aa379548d.csv",
+  "map_snapshot": "/Users/pavanbr/Desktop/atlas_fixed/atlas-lms/backend/../storage/history/b83aa379548d.png",
+  "output_image": "/Users/pavanbr/Desktop/atlas_fixed/atlas-lms/backend/../storage/maps/b83aa379548d_karnataka_district_population_distributionpng.png",
+  "colormap": "Blues",
+  "timestamp": "2026-05-21 21:45"
+}

@@ -163,22 +163,23 @@ async function sendMsg() {
     const data = await res.json();
     removeTyping(typId);
 
-    if (data.csv_path)    activeCsv = data.csv_path;
-    if (data.mode === "map" || data.show_sidebar) showMSB();
+    if (data.clear_csv) clearCSV(false);
+    else if (data.csv_path) activeCsv = data.csv_path;
+    if (data.show_sidebar) showMSB();
 
     if (data.map_url) {
       currentMapId = data.map_id || null;
       currentTitle = msg;
       appendMsgWithMap(data.reply, data.map_url);
-      loadMapHistory();
+      // loadMapHistory only if map sidebar is open — prevents unnecessary fetch
+      if (mapSBOpen) loadMapHistory();
     } else if (data.error) {
       appendMsgWithErr(data.reply, data.error);
     } else {
       appendMsg("assistant", data.reply);
     }
 
-    loadChatList();
-    loadSBProjects();
+    loadChatList(); // sidebar refresh once after reply settled
 
   } catch (e) {
     removeTyping(typId);
@@ -201,10 +202,15 @@ function appendMsg(role, text) {
   const div  = document.createElement("div");
   div.className = `msg ${role}`;
   const isUser = role === "user";
+  const isPermission = !isUser && text === "This request requires backend map generation.\nAllow execution?\n[YES] [NO]";
   div.innerHTML = `
     <div class="msg-av">${isUser ? "P" : "◈"}</div>
     <div class="msg-body">
       <div class="msg-text">${fmt(text)}</div>
+      ${isPermission ? `<div class="perm-row">
+        <button class="perm-btn yes" onclick="sendPermission('yes')">YES</button>
+        <button class="perm-btn no" onclick="sendPermission('no')">NO</button>
+      </div>` : ""}
       <div class="msg-acts">
         <button class="msg-act" onclick="copyMsg(this)">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy
@@ -218,6 +224,11 @@ function appendMsg(role, text) {
   scrollBottom();
 }
 
+function sendPermission(answer) {
+  document.getElementById("msgInput").value = answer;
+  sendMsg();
+}
+
 function appendMsgWithMap(text, mapUrl) {
   const list   = document.getElementById("messages");
   const div    = document.createElement("div");
@@ -227,7 +238,7 @@ function appendMsgWithMap(text, mapUrl) {
     <div class="msg-av">◈</div>
     <div class="msg-body">
       <div class="msg-text">
-        <p>${fmt(text)}</p>
+        ${text ? `<p>${fmt(text)}</p>` : ""}
         <div class="map-result">
           <img src="${imgSrc}" alt="Choropleth Map"
                onerror="this.parentElement.innerHTML='<p style=padding:14px;color:#e74c3c>Image failed to load.</p>'"/>
@@ -333,8 +344,7 @@ async function uploadCSV(event) {
     document.getElementById("cpbPrev").textContent      = data.preview;
     document.getElementById("csvBadgeRow").style.display = "flex";
     document.getElementById("csvBadgeName").textContent  = file.name;
-    toast(file.name + " loaded — " + data.rows + " rows");
-    showMSB();
+    toast(file.name + " attached — " + data.rows + " rows");
   } catch (e) { toast("Upload failed: " + e.message); }
 }
 
@@ -360,12 +370,12 @@ async function convertPasted() {
   } catch (e) { toast("Failed: " + e.message); }
 }
 
-function clearCSV() {
+function clearCSV(showToast = true) {
   activeCsv = null;
   document.getElementById("csvBadgeRow").style.display   = "none";
   document.getElementById("csvPrevBox").style.display    = "none";
   document.getElementById("csvUpload").value = "";
-  toast("CSV cleared");
+  if (showToast) toast("CSV cleared");
 }
 
 // ─────────────────────────────────────────────────────────
@@ -373,15 +383,36 @@ function clearCSV() {
 // ─────────────────────────────────────────────────────────
 function openDl()  { document.getElementById("dlOverlay").classList.add("show"); }
 function closeDl() { document.getElementById("dlOverlay").classList.remove("show"); }
-function dlFmt(fmt) {
+async function dlFmt(fmt) {
   const t = encodeURIComponent(currentTitle || "choropleth_map");
   const i = currentMapId ? `&id=${currentMapId}` : "";
-  window.location.href = `${BACKEND}/api/map/download?format=${fmt}&title=${t}${i}`;
   toast("Downloading ." + fmt.toUpperCase()); closeDl();
+  try {
+    const res  = await fetch(`${BACKEND}/api/map/download?format=${fmt}&title=${t}${i}`);
+    const blob = await res.blob();
+    const url  = URL.createObjectURL(blob);
+    const a    = document.createElement("a");
+    a.href     = url;
+    a.download = `${currentTitle || "choropleth_map"}.${fmt}`;
+    document.body.appendChild(a); a.click();
+    document.body.removeChild(a);
+    setTimeout(() => URL.revokeObjectURL(url), 5000);
+  } catch (e) { toast("Download failed: " + e.message); }
 }
-function dlCSV() {
-  window.location.href = `${BACKEND}/api/map/download-csv${currentMapId ? "?id="+currentMapId : ""}`;
-  toast("Downloading CSV"); closeDl();
+async function dlCSV() {
+  if (!currentMapId) { toast("No map CSV snapshot selected"); return; }
+  toast("Downloading map CSV snapshot"); closeDl();
+  try {
+    const res  = await fetch(`${BACKEND}/api/map/download-csv?id=${currentMapId}`);
+    const blob = await res.blob();
+    const url  = URL.createObjectURL(blob);
+    const a    = document.createElement("a");
+    a.href     = url;
+    a.download = `map_${currentMapId}.csv`;
+    document.body.appendChild(a); a.click();
+    document.body.removeChild(a);
+    setTimeout(() => URL.revokeObjectURL(url), 5000);
+  } catch (e) { toast("Download failed: " + e.message); }
 }
 
 // ─────────────────────────────────────────────────────────
@@ -424,7 +455,6 @@ async function loadChat(id, name) {
 
     (data.messages || []).forEach(m => appendMsg(m.role, m.content));
     scrollBottom();
-    loadChatList();
     switchView("chat", document.querySelector(".nav-item"));
   } catch {}
 }
@@ -448,7 +478,7 @@ async function deleteChat(id) {
   if (!confirm("Delete this chat?")) return;
   await fetch(`${BACKEND}/api/chat/delete/${id}`, { method: "DELETE" });
   if (id === sessionId) newChat();
-  else { loadChatList(); loadSBProjects(); }
+  else { loadChatList(); }
   toast("Chat deleted");
 }
 
@@ -470,8 +500,8 @@ function newChat() {
   mapSBOpen = false;
   document.getElementById("mapSidebar").classList.remove("open");
 
-  loadChatList();
   switchView("chat", document.querySelector(".nav-item"));
+  loadChatList(); // single refresh after state reset
 }
 
 // ─────────────────────────────────────────────────────────
@@ -660,7 +690,6 @@ async function selectProject(projId) {
   // Load chats tab
   await loadProjectChats(projId);
   await loadProjectDocs(projId);
-  loadSBProjects();
 }
 
 // Project tabs
@@ -753,7 +782,6 @@ async function removeChatFromProj(chatId) {
       toast("Chat moved to Recent Chats");
       loadProjectChats(currentProjId);
       loadChatList();
-      loadSBProjects();
     }
   } catch (e) { toast("Error: " + e.message); }
 }
@@ -795,7 +823,7 @@ async function saveProjName() {
   });
   document.getElementById("pdTitle").textContent = name;
   toast("Project renamed!");
-  loadProjectsList(); loadSBProjects();
+  loadSBProjects();
 }
 
 async function saveSystemPrompt() {

@@ -1,0 +1,16 @@
+{
+  "id": "sess_1779204836404",
+  "name": "hlo",
+  "project_id": null,
+  "timestamp": "2026-05-19 21:04",
+  "messages": [
+    {
+      "role": "user",
+      "content": "hlo"
+    },
+    {
+      "role": "assistant",
+      "content": "Hello! It seems like we were discussing your CSV file containing Districts and their corresponding GDP in Crores. To continue where we left off, do you need help with:\n\n1. Generating a summary of the GDP data?\n2. Creating a visualization (like a bar chart) to compare different districts' GDP?\n\nOr is there something else specific you're looking for? Please provide more details so I can assist you better!"
+    }
+  ]
+}
