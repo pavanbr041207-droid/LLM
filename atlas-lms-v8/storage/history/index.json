@@ -1,0 +1,28 @@
+[
+  {
+    "id": "bf595bdae78f",
+    "title": "Population by District in Karnataka",
+    "colormap": "Blues",
+    "district_col": "District",
+    "value_col": "Population",
+    "session_id": "sess_1779809056206",
+    "project_id": null,
+    "timestamp": "2026-05-26 20:54",
+    "map_file": "bf595bdae78f.png",
+    "csv_file": "bf595bdae78f.csv",
+    "metadata_file": "bf595bdae78f.json"
+  },
+  {
+    "id": "76355cb16626",
+    "title": "Gdp Crore by District",
+    "colormap": "Oranges",
+    "district_col": "District",
+    "value_col": "GDP_Crore",
+    "session_id": "manual_gen",
+    "project_id": null,
+    "timestamp": "2026-05-26 20:19",
+    "map_file": "76355cb16626.png",
+    "csv_file": "76355cb16626.csv",
+    "metadata_file": "76355cb16626.json"
+  }
+]

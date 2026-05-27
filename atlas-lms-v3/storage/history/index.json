@@ -1,0 +1,54 @@
+[
+  {
+    "id": "242f3c390466",
+    "title": "Karnataka District Population Distribution",
+    "colormap": "Blues",
+    "district_col": "district",
+    "value_col": "population",
+    "session_id": "sess_1779504490494",
+    "project_id": null,
+    "timestamp": "2026-05-23 10:24",
+    "map_file": "242f3c390466.png",
+    "csv_file": "242f3c390466.csv",
+    "metadata_file": "242f3c390466.json"
+  },
+  {
+    "id": "4338f7f5818b",
+    "title": "Temple Count by District",
+    "colormap": "Blues",
+    "district_col": "district",
+    "value_col": "temple_count",
+    "session_id": "manual_gen",
+    "project_id": null,
+    "timestamp": "2026-05-23 10:11",
+    "map_file": "4338f7f5818b.png",
+    "csv_file": "4338f7f5818b.csv",
+    "metadata_file": "4338f7f5818b.json"
+  },
+  {
+    "id": "94472e551ad8",
+    "title": "Karnataka District Population Distribution",
+    "colormap": "Blues",
+    "district_col": "district",
+    "value_col": "population",
+    "session_id": "sess_1779504490494",
+    "project_id": null,
+    "timestamp": "2026-05-23 09:56",
+    "map_file": "94472e551ad8.png",
+    "csv_file": "94472e551ad8.csv",
+    "metadata_file": "94472e551ad8.json"
+  },
+  {
+    "id": "8ebfa55f0716",
+    "title": "Karnataka District Population Distribution",
+    "colormap": "Blues",
+    "district_col": "district",
+    "value_col": "population",
+    "session_id": "sess_1779504490494",
+    "project_id": null,
+    "timestamp": "2026-05-23 08:18",
+    "map_file": "8ebfa55f0716.png",
+    "csv_file": "8ebfa55f0716.csv",
+    "metadata_file": "8ebfa55f0716.json"
+  }
+]

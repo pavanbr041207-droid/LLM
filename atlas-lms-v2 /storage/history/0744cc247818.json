@@ -1,0 +1,15 @@
+{
+  "request_id": "8387cc2849f3",
+  "dataset_id": "a208f6b87a96",
+  "map_id": "0744cc247818",
+  "session_id": "sess_1779503990345",
+  "user_prompt": "generate choropleath map for the karnataka population",
+  "dataset": {
+    "district_col": "district",
+    "value_col": "population",
+    "dataset_label": "district population",
+    "source": "atlas_internal_baseline"
+  },
+  "colormap": "Blues",
+  "timestamp": "2026-05-23 08:10"
+}

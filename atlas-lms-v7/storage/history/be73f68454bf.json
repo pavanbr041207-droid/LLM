@@ -1,0 +1,15 @@
+{
+  "request_id": "dbbae5635b50",
+  "dataset_id": "1421eb6f0424",
+  "map_id": "be73f68454bf",
+  "session_id": "sess_1779691358056",
+  "user_prompt": "Generate choropleth map for above data",
+  "dataset": {
+    "district_col": "District",
+    "value_col": "Population",
+    "dataset_label": "District Population",
+    "source": "uploaded_csv"
+  },
+  "colormap": "Blues",
+  "timestamp": "2026-05-25 12:17"
+}

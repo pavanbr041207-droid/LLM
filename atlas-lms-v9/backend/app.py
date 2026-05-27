@@ -1,0 +1,130 @@
+"""app.py — Atlas LMS Main Backend — Fixed CORS + Blueprint Debug"""
+
+import os
+from flask import Flask, jsonify, send_from_directory
+from flask_cors import CORS
+
+app = Flask(__name__)
+
+# =========================================================
+# CORS
+# =========================================================
+CORS(
+    app,
+    resources={r"/*": {"origins": "*"}},
+    allow_headers=["Content-Type", "Authorization"],
+    methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"]
+)
+
+# =========================================================
+# STORAGE SETUP
+# =========================================================
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+STORAGE  = os.path.join(BASE_DIR, "..", "storage")
+
+for folder in [
+    "chats",
+    "maps",
+    "projects",
+    "files",
+    "uploads",
+    "history",
+    "notes",
+    "documents",
+    "execution_state"
+]:
+    os.makedirs(os.path.join(STORAGE, folder), exist_ok=True)
+
+# =========================================================
+# BLUEPRINT IMPORTS
+# =========================================================
+
+# Chat
+try:
+    from routes.chat_routes import chat_bp
+    app.register_blueprint(chat_bp, url_prefix="/api/chat")
+    print("✅ chat_routes loaded")
+except Exception as e:
+    print("❌ chat_routes failed:", e)
+
+# Map
+try:
+    from routes.map_routes import map_bp
+    app.register_blueprint(map_bp, url_prefix="/api/map")
+    print("✅ map_routes loaded")
+except Exception as e:
+    print("❌ map_routes failed:", e)
+
+# Project
+try:
+    from routes.project_routes import project_bp
+    app.register_blueprint(project_bp, url_prefix="/api/project")
+    print("✅ project_routes loaded")
+except Exception as e:
+    print("❌ project_routes failed:", e)
+
+# Study
+try:
+    from routes.study_routes import study_bp
+    app.register_blueprint(study_bp, url_prefix="/api/study")
+    print("✅ study_routes loaded")
+except Exception as e:
+    print("❌ study_routes failed:", e)
+
+# File Routes (IMPORTANT DEBUG)
+try:
+    from routes.file_routes import file_bp
+    app.register_blueprint(file_bp, url_prefix="/api/files")
+    print("✅ file_routes loaded")
+except Exception as e:
+    print("❌ file_routes failed:", e)
+
+# =========================================================
+# AFTER REQUEST
+# =========================================================
+@app.after_request
+def after_request(response):
+    response.headers["Access-Control-Allow-Origin"] = "*"
+    response.headers["Access-Control-Allow-Headers"] = "Content-Type,Authorization"
+    response.headers["Access-Control-Allow-Methods"] = "GET,POST,PUT,DELETE,OPTIONS"
+    return response
+
+# =========================================================
+# HEALTH ROUTE
+# =========================================================
+@app.route("/api/health")
+def health():
+    return jsonify({
+        "status": "ok",
+        "app": "Atlas LMS",
+        "version": "2.1"
+    })
+
+# =========================================================
+# STORAGE SERVING
+# =========================================================
+@app.route("/storage/<path:filename>")
+def serve_storage(filename):
+    return send_from_directory(STORAGE, filename)
+
+# =========================================================
+# MAIN
+# =========================================================
+if __name__ == "__main__":
+
+    print("=" * 60)
+    print(" Atlas LMS Backend — http://localhost:5001")
+    print(" Health check: http://localhost:5001/api/health")
+    print("=" * 60)
+
+    # PRINT ALL REGISTERED ROUTES
+    print("\n=========== REGISTERED ROUTES ===========")
+    print(app.url_map)
+    print("=========================================\n")
+
+    app.run(
+        debug=True,
+        use_reloader=False,
+        port=5001,
+        host="0.0.0.0"
+    )

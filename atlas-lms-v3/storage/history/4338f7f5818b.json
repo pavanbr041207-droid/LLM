@@ -1,0 +1,15 @@
+{
+  "request_id": "8b9c0b0d8c9b",
+  "dataset_id": "7cc591a5e923",
+  "map_id": "4338f7f5818b",
+  "session_id": "manual_gen",
+  "user_prompt": "Manual: Temple Count by District",
+  "dataset": {
+    "district_col": "district",
+    "value_col": "temple_count",
+    "dataset_label": "district temple_count",
+    "source": "manual_upload"
+  },
+  "colormap": "Blues",
+  "timestamp": "2026-05-23 10:11"
+}

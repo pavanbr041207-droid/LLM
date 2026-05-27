@@ -1,0 +1,48 @@
+{
+  "id": "sess_1779673644583",
+  "name": "hi",
+  "project_id": null,
+  "timestamp": "2026-05-25 12:14",
+  "messages": [
+    {
+      "role": "user",
+      "content": "hi"
+    },
+    {
+      "role": "assistant",
+      "content": "Hello! How can I assist you with geographic information today? Do you have any specific questions or data related to districts, maps, or other locations?"
+    },
+    {
+      "role": "user",
+      "content": "[Attached: 76bd7854-2eec-4a4e-bf73-dbc037c0b5d6.png]\nDescribe the image"
+    },
+    {
+      "role": "assistant",
+      "content": "⚠️ Could not process 76bd7854-2eec-4a4e-bf73-dbc037c0b5d6.png: No vision model available. Install one with:\n  ollama pull qwen2.5-vl:7b\n  ollama pull llava"
+    },
+    {
+      "role": "user",
+      "content": "pavanbr@Pavans-MacBook-Air choro_final_2 % ollama list\nNAME                       ID              SIZE      MODIFIED     \nqwen2.5-vl:7b              5ced39dfa4ba    6.0 GB    22 hours ago    \nqwen2.5:7b                 845dbda0ea48    4.7 GB    23 hours ago    \nqwen2.5vl:7b               5ced39dfa4ba    6.0 GB    23 hours ago    \nnomic-embed-text:latest    0a109f422b47    274 MB    23 hours ago    \ndeepseek-r1:7b             755ced02ce7b    4.7 GB    2 days ago      \nqwen2.5:latest             845dbda0ea48    4.7 GB    3 days ago"
+    },
+    {
+      "role": "assistant",
+      "content": "It seems you have installed the vision model `qwen2.5-vl:7b`. Would you like to upload an image for me to describe, or do you have any specific geographic data or questions related to districts and maps?"
+    },
+    {
+      "role": "user",
+      "content": "hi"
+    },
+    {
+      "role": "assistant",
+      "content": "Hello again! It looks like we didn't get a chance to process the image yet. Do you want to upload another image? Or perhaps you have some specific geographic information or questions about districts and maps that you'd like to explore?"
+    },
+    {
+      "role": "user",
+      "content": "[Attached: 76bd7854-2eec-4a4e-bf73-dbc037c0b5d6.png]\ndescribe th image"
+    },
+    {
+      "role": "assistant",
+      "content": "⚠️ Could not process 76bd7854-2eec-4a4e-bf73-dbc037c0b5d6.png: No vision model available. Install one with:\n  ollama pull qwen2.5-vl:7b\n  ollama pull llava"
+    }
+  ]
+}

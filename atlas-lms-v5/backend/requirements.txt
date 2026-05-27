@@ -1,0 +1,29 @@
+flask==3.0.3
+flask-cors==4.0.1
+requests==2.32.3
+geopandas==0.14.4
+matplotlib==3.9.0
+pandas==2.2.2
+numpy==1.26.4
+shapely==2.0.4
+
+# New — semantic intelligence layer
+# sentence-transformers optional (heavy), fallback TF-IDF built-in
+# faiss-cpu optional (heavy), fallback file-based search built-in
+# Install these for better semantic search:
+# pip install sentence-transformers faiss-cpu
+# Or just use Ollama embeddings (pull nomic-embed-text):
+# ollama pull nomic-embed-text
+
+# Multimodal + RAG additions (install as needed)
+# pip install PyMuPDF --break-system-packages          # PDF extraction (recommended)
+# pip install pdfplumber --break-system-packages       # PDF fallback
+# pip install pypdf --break-system-packages            # PDF fallback 2
+# pip install python-docx --break-system-packages      # Word documents
+# pip install openpyxl --break-system-packages         # Excel (.xlsx)
+# pip install numpy --break-system-packages            # vector math (likely already installed)
+# Vision model — pull in Ollama (no pip needed):
+#   ollama pull qwen2.5-vl:7b
+#   ollama pull llava
+# Embedding model:
+#   ollama pull nomic-embed-text

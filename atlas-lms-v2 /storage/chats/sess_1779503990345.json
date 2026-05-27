@@ -1,0 +1,24 @@
+{
+  "id": "sess_1779503990345",
+  "name": "hi",
+  "project_id": "b1b533683f7b",
+  "timestamp": "2026-05-23 08:10",
+  "messages": [
+    {
+      "role": "user",
+      "content": "hi"
+    },
+    {
+      "role": "assistant",
+      "content": "Hello! How can I assist you today? If you need any information or help with generating a map, feel free to ask!"
+    },
+    {
+      "role": "user",
+      "content": "generate choropleath map for the karnataka population"
+    },
+    {
+      "role": "assistant",
+      "content": ""
+    }
+  ]
+}

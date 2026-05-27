@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Atlas AI</title>
+<link rel="stylesheet" href="style.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ══ LEFT SIDEBAR ══ -->
+<aside class="sidebar" id="sidebar">
+  <div class="sb-top">
+    <div class="brand">
+      <span class="brand-icon">◈</span>
+      <span class="brand-name">Atlas AI</span>
+    </div>
+    <button class="icon-btn" onclick="toggleSB()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+
+  <button class="new-chat-btn" onclick="newChat()">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+    New chat
+  </button>
+
+  <div class="sb-search">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input type="text" placeholder="Search chats..." oninput="searchChats(this.value)"/>
+  </div>
+
+  <div class="sb-nav">
+    <button class="nav-item active" onclick="switchView('chat',this)">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Chats
+    </button>
+    <button class="nav-item" onclick="switchView('projects',this)">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>Projects
+    </button>
+    <button class="nav-item" onclick="switchView('maps',this)">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="1,6 1,22 8,18 16,22 23,18 23,2 16,6 8,2"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>Maps
+    </button>
+    <button class="nav-item" onclick="switchView('notes',this)">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>Notes
+    </button>
+    <button class="nav-item" onclick="switchView('study',this)">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>Study
+    </button>
+  </div>
+
+  <!-- Recent Chats -->
+  <div class="sb-lbl">RECENT CHATS</div>
+  <div id="chatList" class="chat-list"><div class="no-chats">No conversations yet</div></div>
+
+  <!-- Projects in sidebar -->
+  <div class="sb-lbl" style="margin-top:8px">
+    PROJECTS
+    <button onclick="switchView('projects', document.querySelectorAll('.nav-item')[1]); openCreateProj()" title="New project">+</button>
+  </div>
+  <div id="sbProjList" class="chat-list"></div>
+
+  <div class="sb-bottom">
+    <button class="sb-bot-btn" onclick="toggleTheme()">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      Toggle theme
+    </button>
+    <div class="user-chip"><div class="user-av">P</div><span>Pavan</span></div>
+  </div>
+</aside>
+
+<!-- ══ MAIN CONTENT ══ -->
+<div class="main-wrap" id="mainWrap">
+
+  <!-- ── CHAT VIEW ── -->
+  <div class="view active" id="view-chat">
+    <div class="topbar">
+      <button class="icon-btn" onclick="toggleSB()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <span id="chatTitle" class="tb-title">Atlas AI</span>
+      <div class="tb-right">
+        <button class="map-tog-btn" id="mapTogBtn" onclick="toggleMSB()" style="display:none">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="1,6 1,22 8,18 16,22 23,18 23,2 16,6 8,2"/></svg>Map Data
+        </button>
+        <div class="conn-wrap">
+          <span class="conn-dot" id="connDot"></span>
+          <span id="connLbl" class="conn-lbl">connecting</span>
+        </div>
+      </div>
+    </div>
+    <div class="chat-body" id="chatBody">
+      <div class="welcome" id="welcome">
+        <div class="welcome-logo">◈</div>
+        <h1>How can I help you?</h1>
+        <p>Ask me anything — code, study help, or generate choropleth maps from your data.</p>
+        <div class="chips">
+          <button class="chip" onclick="fillInp('What are choropleth maps and when should I use them?')">What are choropleth maps?</button>
+          <button class="chip" onclick="fillInp('How does geopandas work for Python map generation?')">How does geopandas work?</button>
+          <button class="chip" onclick="fillInp('Generate a choropleth map of Karnataka districts by literacy rate')">Generate a Karnataka map</button>
+          <button class="chip" onclick="fillInp('Generate 5 MCQ questions about Python Flask framework')">MCQs on Flask</button>
+          <button class="chip" onclick="fillInp('Explain what a REST API is in simple terms')">What is a REST API?</button>
+          <button class="chip" onclick="fillInp('Write Python code to read and plot a CSV file')">Python CSV plotting</button>
+        </div>
+      </div>
+      <div id="messages" class="messages" style="display:none"></div>
+    </div>
+    <div class="csv-badge-row" id="csvBadgeRow">
+      <div class="csv-badge">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg>
+        <span id="csvBadgeName">data.csv</span>
+        <button onclick="clearCSV()">✕</button>
+      </div>
+    </div>
+    <div class="input-area">
+      <div class="inp-box">
+        <textarea id="msgInput" placeholder="Message Atlas AI..." rows="1"
+          onkeydown="handleKey(event)" oninput="autoResize(this)"></textarea>
+        <div class="inp-toolbar">
+          <label class="tb-btn" title="Upload CSV">
+            <input type="file" id="csvUpload" accept=".csv" hidden onchange="uploadCSV(event)"/>
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
+          </label>
+          <button class="send-btn" id="sendBtn" onclick="sendMsg()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22,2 15,22 11,13 2,9 22,2"/></svg>
+          </button>
+        </div>
+      </div>
+      <p class="disclaimer">Atlas AI can make mistakes. Verify important information.</p>
+    </div>
+  </div>
+
+  <!-- ── PROJECTS VIEW ── -->
+  <div class="view" id="view-projects">
+    <div class="proj-layout">
+      <!-- Left: project list -->
+      <div class="proj-list-panel">
+        <div class="plp-header">
+          <span class="plp-title">Projects</span>
+          <button class="act-btn" onclick="openCreateProj()">+ New</button>
+        </div>
+        <div class="proj-items" id="projItems">
+          <div class="empty-state">No projects yet</div>
+        </div>
+      </div>
+      <!-- Right: project detail -->
+      <div class="proj-detail-panel" id="projDetailPanel">
+        <div class="proj-no-sel" id="projNoSel">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+          <p>Select a project to view details</p>
+        </div>
+        <div id="projDetail" style="display:none;flex:1;flex-direction:column;overflow:hidden;display:none">
+          <div class="proj-detail-header">
+            <span class="pdh-icon" id="pdIcon">📁</span>
+            <span class="pdh-title" id="pdTitle">Project</span>
+            <div class="pdh-actions">
+              <button class="act-btn" onclick="openChatInProject()">+ New Chat</button>
+              <button class="act-btn sec" onclick="openProjSettings()">⚙ Settings</button>
+            </div>
+          </div>
+          <div class="proj-tabs">
+            <button class="proj-tab active" onclick="projTab('chats',this)">Chats</button>
+            <button class="proj-tab" onclick="projTab('docs',this)">Documents</button>
+            <button class="proj-tab" onclick="projTab('settings',this)">Settings</button>
+          </div>
+          <!-- Chats tab -->
+          <div class="proj-tab-panel active" id="ptab-chats">
+            <div id="projChatsList"></div>
+          </div>
+          <!-- Docs tab -->
+          <div class="proj-tab-panel" id="ptab-docs">
+            <label class="upload-doc-zone">
+              <input type="file" hidden accept=".pdf,.txt,.md,.docx,.csv" onchange="uploadProjDoc(event)"/>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17,8 12,3 7,8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+              <span>Upload document (PDF, TXT, MD, DOCX, CSV)</span>
+              <small style="color:var(--muted);font-size:11px">Used for AI context retrieval</small>
+            </label>
+            <div id="projDocsList"></div>
+          </div>
+          <!-- Settings tab -->
+          <div class="proj-tab-panel" id="ptab-settings">
+            <div class="settings-section">
+              <h4>Project Name</h4>
+              <div class="settings-row">
+                <input id="settingsProjName" class="settings-inp" type="text" placeholder="Project name..."/>
+                <button class="act-btn" onclick="saveProjName()">Save</button>
+              </div>
+            </div>
+            <div class="settings-section">
+              <h4>AI Instructions (System Prompt)</h4>
+              <p>This prompt is injected into every AI response within this project.</p>
+              <textarea id="settingsPrompt" class="settings-ta" rows="6"
+                placeholder="e.g. You are an expert in Karnataka geography. Always reference the uploaded documents when answering questions about districts."></textarea>
+              <button class="act-btn" onclick="saveSystemPrompt()">Save Instructions</button>
+            </div>
+            <div class="settings-section">
+              <h4>Project Memory</h4>
+              <p>Persistent notes the AI will always remember for this project.</p>
+              <textarea id="settingsMemory" class="settings-ta" rows="4"
+                placeholder="e.g. The user is working on Karnataka district data analysis for 2023..."></textarea>
+              <button class="act-btn" onclick="saveMemory()">Save Memory</button>
+            </div>
+            <div class="settings-section">
+              <h4>Danger Zone</h4>
+              <button class="act-btn danger" onclick="deleteProject()">Delete Project</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── MAPS VIEW ── -->
+  <div class="view" id="view-maps">
+    <div class="topbar">
+      <span class="tb-title">Maps</span>
+      <div class="maps-tabs">
+        <button class="maps-tab-btn active" id="tabHistBtn"   onclick="switchMapsTab('history')">📋 History</button>
+        <button class="maps-tab-btn"        id="tabManualBtn" onclick="switchMapsTab('manual')">⚙️ Manual Generation</button>
+      </div>
+    </div>
+
+    <!-- ── HISTORY TAB ── -->
+    <div class="page-body maps-tab-panel" id="mapsTabHistory">
+      <div id="mapsGrid" class="maps-grid"></div>
+    </div>
+
+    <!-- ── MANUAL GENERATION TAB ── -->
+    <div class="page-body maps-tab-panel" id="mapsTabManual" style="display:none">
+      <div class="mgp-wrap">
+        <div class="mgp-card">
+          <h2 class="mgp-title">🗺️ Manual Map Generation</h2>
+          <p class="mgp-desc">Upload a CSV or paste comma-separated data, choose colours, and generate a fresh choropleth map.</p>
+
+          <!-- Upload area -->
+          <div class="mgp-section-label">Upload CSV File</div>
+          <div class="mgp-drop-zone" id="mgpDropZone"
+               ondragover="mgpDragOver(event)" ondragleave="mgpDragLeave(event)" ondrop="mgpDrop(event)"
+               onclick="document.getElementById('mgpFileInput').click()">
+            <input type="file" accept=".csv" id="mgpFileInput" hidden onchange="mgpFileChosen(event)"/>
+            <div class="mgp-drop-icon">📂</div>
+            <div class="mgp-drop-text">Click to browse or drag &amp; drop a .csv file here</div>
+            <div class="mgp-drop-hint">Supports any CSV with 2+ columns</div>
+          </div>
+
+          <!-- CSV preview after upload -->
+          <div id="mgpPreviewBox" class="mgp-preview-box" style="display:none">
+            <div class="mgp-prev-header">
+              <span id="mgpFileName" class="mgp-fname"></span>
+              <span id="mgpRowCount" class="mgp-rcount"></span>
+              <button class="mgp-remove-btn" onclick="mgpClearFile()">✕ Remove</button>
+            </div>
+            <pre id="mgpPreviewText" class="mgp-prev-text"></pre>
+          </div>
+
+          <!-- OR: Paste comma-separated data -->
+          <div class="mgp-or-divider"><span>OR</span></div>
+          <div class="mgp-section-label">Paste Comma-Separated Data</div>
+          <textarea id="mgpPasteArea" class="mgp-paste-area"
+            placeholder="district,value&#10;Bengaluru Urban,9621551&#10;Mysuru,3001127&#10;Belagavi,4779661&#10;..."
+            oninput="mgpPasteChanged()"></textarea>
+          <button class="mgp-parse-btn" id="mgpParseBtn" onclick="mgpParsePasted()" disabled>
+            ✓ Use Pasted Data
+          </button>
+
+          <!-- Options row -->
+          <div class="mgp-options-row">
+            <div class="mgp-opt-grp">
+              <label class="mgp-opt-label">Map Title</label>
+              <input type="text" id="mgpTitle" class="mgp-opt-input"
+                     placeholder="e.g. Karnataka Rainfall 2024"/>
+            </div>
+            <div class="mgp-opt-grp">
+              <label class="mgp-opt-label">Colour Scheme</label>
+              <select id="mgpColormap" class="mgp-opt-select">
+                <option value="Blues">🔵 Blues</option>
+                <option value="Greens">🟢 Greens</option>
+                <option value="Reds">🔴 Reds</option>
+                <option value="Purples">🟣 Purples</option>
+                <option value="Oranges">🟠 Oranges</option>
+                <option value="Greys">⚫ Greys</option>
+                <option value="YlOrRd">🌡️ Yellow-Orange-Red</option>
+                <option value="viridis">🌈 Viridis</option>
+                <option value="plasma">🔥 Plasma</option>
+                <option value="inferno">🌋 Inferno</option>
+                <option value="magma">🌑 Magma</option>
+                <option value="cividis">🌊 Cividis</option>
+                <option value="Spectral">🎨 Spectral</option>
+                <option value="GnBu">🩵 Green-Blue</option>
+                <option value="YlOrBr">🟤 Yellow-Brown</option>
+                <option value="RdPu">🩷 Red-Purple</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Colour preview swatches -->
+          <div class="mgp-swatch-row" id="mgpSwatchRow">
+            <div class="mgp-swatch" style="background:linear-gradient(90deg,#deebf7,#08519c)" title="Blues"></div>
+            <div class="mgp-swatch" style="background:linear-gradient(90deg,#e5f5e0,#006d2c)" title="Greens"></div>
+            <div class="mgp-swatch" style="background:linear-gradient(90deg,#fee0d2,#a50f15)" title="Reds"></div>
+            <div class="mgp-swatch" style="background:linear-gradient(90deg,#efedf5,#3f007d)" title="Purples"></div>
+            <div class="mgp-swatch" style="background:linear-gradient(90deg,#feedde,#7f2704)" title="Oranges"></div>
+            <div class="mgp-swatch" style="background:linear-gradient(90deg,#f7f7f7,#252525)" title="Greys"></div>
+            <div class="mgp-swatch" style="background:linear-gradient(90deg,#ffffb2,#bd0026)" title="YlOrRd"></div>
+            <div class="mgp-swatch" style="background:linear-gradient(90deg,#440154,#21908c,#fde725)" title="Viridis"></div>
+          </div>
+
+          <!-- Generate button -->
+          <button class="mgp-gen-btn" id="mgpGenBtn" onclick="mgpGenerate()" disabled>
+            🗺️ Generate Map
+          </button>
+
+          <!-- Status -->
+          <div id="mgpStatus" class="mgp-status" style="display:none"></div>
+
+          <!-- Result -->
+          <div id="mgpResult" class="mgp-result" style="display:none">
+            <div class="mgp-result-label">Generated Map</div>
+            <img id="mgpResultImg" class="mgp-result-img" alt="Generated choropleth map"/>
+            <div class="mgp-result-actions">
+              <button class="mgp-act-btn" onclick="mgpDownload('png')">⬇ PNG</button>
+              <button class="mgp-act-btn" onclick="mgpDownload('pdf')">⬇ PDF</button>
+              <button class="mgp-act-btn" onclick="mgpDownload('csv')">⬇ CSV Data</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── NOTES VIEW ── -->
+  <div class="view" id="view-notes">
+    <div class="topbar">
+      <span class="tb-title">Notes</span>
+      <button class="act-btn" onclick="newNote()">+ New Note</button>
+    </div>
+    <div class="page-body">
+      <div class="notes-layout">
+        <div id="notesList" class="notes-list"></div>
+        <div class="note-editor">
+          <input id="noteTitleInp" type="text" placeholder="Note title..." class="note-title-inp"/>
+          <textarea id="noteContentTa" placeholder="Write your note here..." class="note-content-ta"></textarea>
+          <div class="note-acts"><button class="act-btn" onclick="saveNote()">Save Note</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── STUDY VIEW ── -->
+  <div class="view" id="view-study">
+    <div class="topbar"><span class="tb-title">Study Tools</span></div>
+    <div class="page-body">
+      <div class="study-grid">
+        <div class="study-card">
+          <div class="sc-icon">📝</div>
+          <h3>MCQ Generator</h3>
+          <p>Generate multiple choice questions from any topic</p>
+          <input id="mcqTopic" type="text" placeholder="Enter topic e.g. Python Flask..."/>
+          <select id="mcqCount">
+            <option value="5">5 questions</option>
+            <option value="10">10 questions</option>
+            <option value="15">15 questions</option>
+          </select>
+          <button class="act-btn" onclick="genMCQ()">Generate MCQs</button>
+          <div id="mcqResult" class="result-box" style="display:none"></div>
+        </div>
+        <div class="study-card">
+          <div class="sc-icon">📋</div>
+          <h3>Assignment Generator</h3>
+          <p>Generate assignments, reports, and summaries</p>
+          <input id="assignTopic" type="text" placeholder="Enter topic..."/>
+          <select id="assignType">
+            <option value="report">Report</option>
+            <option value="summary">Summary</option>
+            <option value="explanation">Explanation</option>
+            <option value="viva questions">Viva Questions</option>
+          </select>
+          <button class="act-btn" onclick="genAssign()">Generate</button>
+          <div id="assignResult" class="result-box" style="display:none"></div>
+        </div>
+        <div class="study-card">
+          <div class="sc-icon">💡</div>
+          <h3>Topic Explainer</h3>
+          <p>Get clear explanations for any concept</p>
+          <input id="explainTopic" type="text" placeholder="Enter concept..."/>
+          <select id="explainLevel">
+            <option value="simple">Simple (beginner)</option>
+            <option value="intermediate">Intermediate</option>
+            <option value="advanced">Advanced</option>
+          </select>
+          <button class="act-btn" onclick="explainIt()">Explain</button>
+          <div id="explainResult" class="result-box" style="display:none"></div>
+        </div>
+        <div class="study-card">
+          <div class="sc-icon">⏱️</div>
+          <h3>Study Timer</h3>
+          <p>Pomodoro timer for focused study sessions</p>
+          <div class="timer-disp" id="timerDisp">25:00</div>
+          <div class="timer-ctrl">
+            <button class="act-btn" id="timerBtn" onclick="startTimer()">Start</button>
+            <button class="act-btn sec" onclick="resetTimer()">Reset</button>
+          </div>
+          <p class="timer-lbl" id="timerLbl">Focus Session</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ MAP SIDEBAR ══ -->
+<aside class="map-sidebar" id="mapSidebar">
+  <div class="msb-top">
+    <span class="msb-title">Map Configuration</span>
+    <button class="icon-btn" onclick="toggleMSB()">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <div class="msb-tabs">
+    <button class="msb-tab active" onclick="msbTab('data',this)">Data</button>
+    <button class="msb-tab" onclick="msbTab('colors',this)">Colors</button>
+    <button class="msb-tab" onclick="msbTab('history',this)">History</button>
+  </div>
+  <div class="msb-pane active" id="msb-data">
+    <div class="msb-lbl">UPLOAD CSV</div>
+    <label class="upload-zone">
+      <input type="file" accept=".csv" hidden onchange="uploadCSV(event)"/>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17,8 12,3 7,8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+      <span>Click to upload CSV</span>
+    </label>
+    <div id="csvPrevBox" class="csv-prev-box" style="display:none">
+      <div class="cpb-hdr"><span id="cpbName"></span><button onclick="clearCSV()">Remove</button></div>
+      <pre id="cpbPrev"></pre>
+    </div>
+    <div class="msb-lbl" style="margin-top:12px">PASTE DATA</div>
+    <textarea id="pasteArea" placeholder="Paste table data here..."></textarea>
+    <button class="conv-btn" onclick="convertPasted()">Convert to CSV →</button>
+    <div class="msb-lbl" style="margin-top:12px">TIPS</div>
+    <div class="tip-row"><span class="tip-dot"></span>Column 1 = district names</div>
+    <div class="tip-row"><span class="tip-dot"></span>Column 2 = numeric values</div>
+    <div class="tip-row"><span class="tip-dot"></span>Say color in message e.g. "in blue"</div>
+  </div>
+  <div class="msb-pane" id="msb-colors">
+    <div class="msb-lbl">MONO COLORS</div>
+    <div class="cmap-grid">
+      <div class="cmap selected" data-cmap="Blues" onclick="pickColor(this)"><div class="cmap-bar" style="background:linear-gradient(90deg,#c6dbef,#084594)"></div><span>Blues</span></div>
+      <div class="cmap" data-cmap="Greens" onclick="pickColor(this)"><div class="cmap-bar" style="background:linear-gradient(90deg,#c7e9c0,#005a32)"></div><span>Greens</span></div>
+      <div class="cmap" data-cmap="Reds" onclick="pickColor(this)"><div class="cmap-bar" style="background:linear-gradient(90deg,#fee5d9,#99000d)"></div><span>Reds</span></div>
+      <div class="cmap" data-cmap="Purples" onclick="pickColor(this)"><div class="cmap-bar" style="background:linear-gradient(90deg,#f2f0f7,#3f007d)"></div><span>Purples</span></div>
+      <div class="cmap" data-cmap="Oranges" onclick="pickColor(this)"><div class="cmap-bar" style="background:linear-gradient(90deg,#feedde,#7f2704)"></div><span>Oranges</span></div>
+      <div class="cmap" data-cmap="Greys" onclick="pickColor(this)"><div class="cmap-bar" style="background:linear-gradient(90deg,#f7f7f7,#252525)"></div><span>Greys</span></div>
+      <div class="cmap" data-cmap="RdPu" onclick="pickColor(this)"><div class="cmap-bar" style="background:linear-gradient(90deg,#feebe2,#7a0177)"></div><span>Pinks</span></div>
+      <div class="cmap" data-cmap="YlOrBr" onclick="pickColor(this)"><div class="cmap-bar" style="background:linear-gradient(90deg,#ffffe5,#662506)"></div><span>Browns</span></div>
+      <div class="cmap" data-cmap="GnBu" onclick="pickColor(this)"><div class="cmap-bar" style="background:linear-gradient(90deg,#f0f9e8,#084081)"></div><span>Teals</span></div>
+    </div>
+    <div class="msb-lbl" style="margin-top:12px">MULTI COLORS</div>
+    <div class="cmap-grid">
+      <div class="cmap" data-cmap="viridis" onclick="pickColor(this)"><div class="cmap-bar" style="background:linear-gradient(90deg,#440154,#21908c,#fde725)"></div><span>Viridis</span></div>
+      <div class="cmap" data-cmap="plasma" onclick="pickColor(this)"><div class="cmap-bar" style="background:linear-gradient(90deg,#0d0887,#cc4778,#f0f921)"></div><span>Plasma</span></div>
+      <div class="cmap" data-cmap="inferno" onclick="pickColor(this)"><div class="cmap-bar" style="background:linear-gradient(90deg,#000004,#bb3754,#fcffa4)"></div><span>Inferno</span></div>
+      <div class="cmap" data-cmap="magma" onclick="pickColor(this)"><div class="cmap-bar" style="background:linear-gradient(90deg,#000004,#b63679,#fcfdbf)"></div><span>Magma</span></div>
+      <div class="cmap" data-cmap="Spectral" onclick="pickColor(this)"><div class="cmap-bar" style="background:linear-gradient(90deg,#9e0142,#ffffbf,#5e4fa2)"></div><span>Spectral</span></div>
+      <div class="cmap" data-cmap="YlOrRd" onclick="pickColor(this)"><div class="cmap-bar" style="background:linear-gradient(90deg,#ffffcc,#fd8d3c,#800026)"></div><span>YlOrRd</span></div>
+      <div class="cmap" data-cmap="cividis" onclick="pickColor(this)"><div class="cmap-bar" style="background:linear-gradient(90deg,#00204d,#4b8fa6,#fee838)"></div><span>Cividis</span></div>
+      <div class="cmap" data-cmap="turbo" onclick="pickColor(this)"><div class="cmap-bar" style="background:linear-gradient(90deg,#30123b,#f5523f,#7dff4f)"></div><span>Turbo</span></div>
+      <div class="cmap" data-cmap="rainbow" onclick="pickColor(this)"><div class="cmap-bar" style="background:linear-gradient(90deg,#0000ff,#00ff00,#ff0000)"></div><span>Rainbow</span></div>
+    </div>
+  </div>
+  <div class="msb-pane" id="msb-history">
+    <div class="msb-lbl">GENERATED MAPS</div>
+    <div id="mapHistList"><div class="empty-state">No maps yet</div></div>
+  </div>
+</aside>
+
+<!-- ══ MODALS ══ -->
+
+<!-- Edit message modal -->
+<div class="overlay" id="editOverlay" onclick="closeEdit()">
+  <div class="modal" onclick="event.stopPropagation()">
+    <div class="modal-hdr"><span>Edit message</span><button onclick="closeEdit()">✕</button></div>
+    <textarea id="editTa" class="modal-ta" rows="5"></textarea>
+    <div class="modal-ftr">
+      <button class="btn-sec" onclick="closeEdit()">Cancel</button>
+      <button class="btn-pri" onclick="saveEdit()">Save &amp; Resend</button>
+    </div>
+  </div>
+</div>
+
+<!-- Download map modal -->
+<div class="overlay" id="dlOverlay" onclick="closeDl()">
+  <div class="modal" onclick="event.stopPropagation()">
+    <div class="modal-hdr"><span>Download map</span><button onclick="closeDl()">✕</button></div>
+    <div class="dl-opts">
+      <button class="dl-card" onclick="dlFmt('png')"><b>PNG</b><small>High quality</small></button>
+      <button class="dl-card" onclick="dlFmt('jpeg')"><b>JPG</b><small>Compressed</small></button>
+      <button class="dl-card" onclick="dlFmt('pdf')"><b>PDF</b><small>Print ready</small></button>
+    </div>
+    <button class="dl-csv-btn" onclick="dlCSV()">📊 Download CSV data</button>
+  </div>
+</div>
+
+<!-- Create project modal -->
+<div class="overlay" id="createProjOverlay" onclick="closeCreateProj()">
+  <div class="modal" onclick="event.stopPropagation()">
+    <div class="modal-hdr"><span>New Project</span><button onclick="closeCreateProj()">✕</button></div>
+    <label class="modal-lbl">Project name</label>
+    <input id="projNameInp" class="modal-inp" type="text" placeholder="e.g. Karnataka Map Analysis"/>
+    <label class="modal-lbl">Description (optional)</label>
+    <textarea id="projDescTa" class="modal-ta" rows="2" placeholder="What is this project about?"></textarea>
+    <label class="modal-lbl">Icon</label>
+    <div class="proj-icons">
+      <button class="pib active" onclick="selIcon(this,'📁')">📁</button>
+      <button class="pib" onclick="selIcon(this,'🗺')">🗺</button>
+      <button class="pib" onclick="selIcon(this,'📊')">📊</button>
+      <button class="pib" onclick="selIcon(this,'💻')">💻</button>
+      <button class="pib" onclick="selIcon(this,'📚')">📚</button>
+      <button class="pib" onclick="selIcon(this,'🔬')">🔬</button>
+      <button class="pib" onclick="selIcon(this,'📝')">📝</button>
+      <button class="pib" onclick="selIcon(this,'🧪')">🧪</button>
+    </div>
+    <div class="modal-ftr">
+      <button class="btn-sec" onclick="closeCreateProj()">Cancel</button>
+      <button class="btn-pri" onclick="createProj()">Create Project</button>
+    </div>
+  </div>
+</div>
+
+<!-- Move chat to project modal -->
+<div class="overlay" id="moveChatOverlay" onclick="closeMoveChat()">
+  <div class="modal" onclick="event.stopPropagation()">
+    <div class="modal-hdr"><span>Move chat to project</span><button onclick="closeMoveChat()">✕</button></div>
+    <p style="font-size:13px;color:var(--dim);margin-bottom:10px">Select a project or move back to Recent Chats</p>
+    <div class="move-proj-list" id="moveProjList"></div>
+    <div class="modal-ftr">
+      <button class="btn-sec" onclick="closeMoveChat()">Cancel</button>
+      <button class="btn-pri" onclick="confirmMoveChat()">Move Chat</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>

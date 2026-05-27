@@ -1,0 +1,15 @@
+{
+  "request_id": "9c2ef8ef3520",
+  "dataset_id": "ccb6297d104b",
+  "map_id": "56dd7c590164",
+  "session_id": "sess_1779557909885",
+  "user_prompt": "generate choropleath map of gdp of Karnataka of all districts",
+  "dataset": {
+    "district_col": "district",
+    "value_col": "gdp_index",
+    "dataset_label": "district gdp_index",
+    "source": "atlas_internal_baseline"
+  },
+  "colormap": "Blues",
+  "timestamp": "2026-05-23 23:15"
+}

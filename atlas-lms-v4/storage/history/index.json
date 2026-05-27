@@ -1,0 +1,28 @@
+[
+  {
+    "id": "56dd7c590164",
+    "title": "Karnataka District GDP Index Distribution",
+    "colormap": "Blues",
+    "district_col": "district",
+    "value_col": "gdp_index",
+    "session_id": "sess_1779557909885",
+    "project_id": null,
+    "timestamp": "2026-05-23 23:15",
+    "map_file": "56dd7c590164.png",
+    "csv_file": "56dd7c590164.csv",
+    "metadata_file": "56dd7c590164.json"
+  },
+  {
+    "id": "2c734b8c7cde",
+    "title": "Karnataka District Population Distribution",
+    "colormap": "Blues",
+    "district_col": "district",
+    "value_col": "population",
+    "session_id": "sess_1779557909885",
+    "project_id": null,
+    "timestamp": "2026-05-23 23:11",
+    "map_file": "2c734b8c7cde.png",
+    "csv_file": "2c734b8c7cde.csv",
+    "metadata_file": "2c734b8c7cde.json"
+  }
+]

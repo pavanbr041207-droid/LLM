@@ -1,0 +1,15 @@
+{
+  "request_id": "4291b9c19219",
+  "dataset_id": "6f56a9976c83",
+  "map_id": "55a6548e8e5f",
+  "session_id": "manual_gen",
+  "user_prompt": "Manual: Gdp Crore by District",
+  "dataset": {
+    "district_col": "District",
+    "value_col": "GDP_Crore",
+    "dataset_label": "District GDP_Crore",
+    "source": "manual_upload"
+  },
+  "colormap": "Reds",
+  "timestamp": "2026-05-25 12:18"
+}

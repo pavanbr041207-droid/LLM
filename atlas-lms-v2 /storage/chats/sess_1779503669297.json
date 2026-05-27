@@ -1,0 +1,32 @@
+{
+  "id": "sess_1779503669297",
+  "name": "hi",
+  "project_id": null,
+  "timestamp": "2026-05-23 08:05",
+  "messages": [
+    {
+      "role": "user",
+      "content": "hi"
+    },
+    {
+      "role": "assistant",
+      "content": "Hello! How can I assist you today? Do you need help with generating a map or have any other questions?"
+    },
+    {
+      "role": "user",
+      "content": "generate choropleath map of karnataka districts for gdp"
+    },
+    {
+      "role": "assistant",
+      "content": ""
+    },
+    {
+      "role": "user",
+      "content": "generate choropleath map of karnataka districts for population"
+    },
+    {
+      "role": "assistant",
+      "content": ""
+    }
+  ]
+}

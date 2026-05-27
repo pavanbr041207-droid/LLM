@@ -1,0 +1,50 @@
+[
+  {
+    "id": "fff782767a87",
+    "name": "karnataka_population.csv",
+    "stored": "7bfe41d2a40e_fff782767a87.csv",
+    "ext": ".csv",
+    "size": 575,
+    "uploaded": "2026-05-27 10:43",
+    "content": "District ,Population\nBangalore ,Urban\t9621551\nMysore\t,3001127\nDakshina Kannada,\t2089649\nBelgaum\t,4779661\nGulbarga\t,2564892\nShimoga\t,1752753\nTumkur\t,2681449\nDharwad\t,1846993\nBijapur\t,2175102\nHassan\t,1776421\nRaichur\t,1928812\nBellary\t,2531592\nBidar\t,1700018\nChitradurga\t,1660378\nDavanagere\t,1946905\nGadag\t,1065235\nHaveri\t,1598506\nKodagu\t,554762\nKolar\t,1540231\nKoppal\t,1391274\nMandya\t,1808680\nRamanagara\t,1082739\nUdupi\t,1177908\nUttara Kannada\t,1437169\nYadgir\t,1172985\nChikkaballapura\t,1254494\nChikmagalur\t,1137574\nChamarajanagar\t,1020791\nBagalkot\t,1888294\nBangalore Rural\t,987257",
+    "chunks": [
+      "District ,Population Bangalore ,Urban 9621551 Mysore ,3001127 Dakshina Kannada, 2089649 Belgaum ,4779661 Gulbarga ,2564892 Shimoga ,1752753 Tumkur ,2681449 Dharwad ,1846993 Bijapur ,2175102 Hassan ,1776421 Raichur ,1928812 Bellary ,2531592 Bidar ,1700018 Chitradurga ,1660378 Davanagere ,1946905 Gadag ,1065235 Haveri ,1598506 Kodagu ,554762 Kolar ,1540231 Koppal ,1391274 Mandya ,1808680 Ramanagara ,1082739 Udupi ,1177908 Uttara Kannada ,1437169 Yadgir ,1172985 Chikkaballapura ,1254494 Chikmagalur ,1137574 Chamarajanagar ,1020791 Bagalkot ,1888294 Bangalore Rural ,987257"
+    ]
+  },
+  {
+    "id": "15063623ba41",
+    "name": "gdp.csv",
+    "stored": "7bfe41d2a40e_15063623ba41.csv",
+    "ext": ".csv",
+    "size": 486,
+    "uploaded": "2026-05-27 10:43",
+    "content": "District,GDP_Crore\nBangalore Urban,1173574\nMysore,89000\nDakshina Kannada,154509\nBelgaum,78000\nGulbarga,52000\nShimoga,78037\nTumkur,92157\nDharwad,69000\nBijapur,45000\nHassan,47000\nRaichur,38000\nBellary,62000\nBidar,39000\nChitradurga,34000\nDavanagere,58000\nGadag,31000\nHaveri,35000\nKodagu,21510\nKolar,40000\nKoppal,33000\nMandya,60466\nRamanagara,30000\nUdupi,75198\nUttara Kannada,43000\nYadgir,26000\nChikkaballapura,36000\nChikmagalur,59955\nChamrajnagar,28000\nBagalkot,42000\nBangalore Rural,43485",
+    "chunks": [
+      "District,GDP_Crore Bangalore Urban,1173574 Mysore,89000 Dakshina Kannada,154509 Belgaum,78000 Gulbarga,52000 Shimoga,78037 Tumkur,92157 Dharwad,69000 Bijapur,45000 Hassan,47000 Raichur,38000 Bellary,62000 Bidar,39000 Chitradurga,34000 Davanagere,58000 Gadag,31000 Haveri,35000 Kodagu,21510 Kolar,40000 Koppal,33000 Mandya,60466 Ramanagara,30000 Udupi,75198 Uttara Kannada,43000 Yadgir,26000 Chikkaballapura,36000 Chikmagalur,59955 Chamrajnagar,28000 Bagalkot,42000 Bangalore Rural,43485"
+    ]
+  },
+  {
+    "id": "ae04d725d346",
+    "name": "litracy rate.csv",
+    "stored": "7bfe41d2a40e_ae04d725d346.csv",
+    "ext": ".csv",
+    "size": 487,
+    "uploaded": "2026-05-27 10:43",
+    "content": "District,Literacy_Rate\nBangalore Urban,87.67\nMysore,72.79\nDakshina Kannada,88.57\nBelgaum,73.48\nGulbarga,64.85\nShimoga,80.45\nTumkur,75.14\nDharwad,80.00\nBijapur,67.15\nHassan,76.07\nRaichur,59.56\nBellary,67.43\nBidar,70.51\nChitradurga,73.71\nDavanagere,75.74\nGadag,75.12\nHaveri,77.40\nKodagu,82.61\nKolar,74.39\nKoppal,68.09\nMandya,70.40\nRamanagara,69.22\nUdupi,86.24\nUttara Kannada,84.06\nYadgir,51.83\nChikkaballapura,69.76\nChikmagalur,79.25\nChamrajnagar,61.43\nBagalkot,68.82\nBangalore Rural,77.93",
+    "chunks": [
+      "District,Literacy_Rate Bangalore Urban,87.67 Mysore,72.79 Dakshina Kannada,88.57 Belgaum,73.48 Gulbarga,64.85 Shimoga,80.45 Tumkur,75.14 Dharwad,80.00 Bijapur,67.15 Hassan,76.07 Raichur,59.56 Bellary,67.43 Bidar,70.51 Chitradurga,73.71 Davanagere,75.74 Gadag,75.12 Haveri,77.40 Kodagu,82.61 Kolar,74.39 Koppal,68.09 Mandya,70.40 Ramanagara,69.22 Udupi,86.24 Uttara Kannada,84.06 Yadgir,51.83 Chikkaballapura,69.76 Chikmagalur,79.25 Chamrajnagar,61.43 Bagalkot,68.82 Bangalore Rural,77.93"
+    ]
+  },
+  {
+    "id": "a855b2c999e5",
+    "name": "population.csv",
+    "stored": "7bfe41d2a40e_a855b2c999e5.csv",
+    "ext": ".csv",
+    "size": 542,
+    "uploaded": "2026-05-27 10:43",
+    "content": "District,Population\nBangalore Urban,9621551\nMysore,3001127\nDakshina Kannada,2089649\nBelgaum,4779661\nGulbarga,2564892\nShimoga,1752753\nTumkur,2681449\nDharwad,1846993\nBijapur,2175102\nHassan,1776421\nRaichur,1928812\nBellary,2531592\nBidar,1700018\nChitradurga,1660378\nDavanagere,1946905\nGadag,1065235\nHaveri,1598506\nKodagu,554762\nKolar,1540231\nKoppal,1391274\nMandya,1808680\nRamanagara,1082739\nUdupi,1177908\nUttara Kannada,1437169\nYadgir,1172985\nChikkaballapura,1254494\nChikmagalur,1137574\nChamrajnagar,1020791\nBagalkot,1888294\nBangalore Rural,987257",
+    "chunks": [
+      "District,Population Bangalore Urban,9621551 Mysore,3001127 Dakshina Kannada,2089649 Belgaum,4779661 Gulbarga,2564892 Shimoga,1752753 Tumkur,2681449 Dharwad,1846993 Bijapur,2175102 Hassan,1776421 Raichur,1928812 Bellary,2531592 Bidar,1700018 Chitradurga,1660378 Davanagere,1946905 Gadag,1065235 Haveri,1598506 Kodagu,554762 Kolar,1540231 Koppal,1391274 Mandya,1808680 Ramanagara,1082739 Udupi,1177908 Uttara Kannada,1437169 Yadgir,1172985 Chikkaballapura,1254494 Chikmagalur,1137574 Chamrajnagar,1020791 Bagalkot,1888294 Bangalore Rural,987257"
+    ]
+  }
+]

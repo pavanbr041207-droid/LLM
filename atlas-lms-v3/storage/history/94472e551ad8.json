@@ -1,0 +1,15 @@
+{
+  "request_id": "24f19dfbbd25",
+  "dataset_id": "49a78e99de1b",
+  "map_id": "94472e551ad8",
+  "session_id": "sess_1779504490494",
+  "user_prompt": "yes",
+  "dataset": {
+    "district_col": "district",
+    "value_col": "population",
+    "dataset_label": "district population",
+    "source": "atlas_internal_baseline"
+  },
+  "colormap": "Blues",
+  "timestamp": "2026-05-23 09:56"
+}

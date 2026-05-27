@@ -1,0 +1,16 @@
+{
+  "id": "sess_1779594310039",
+  "name": "Describe this image",
+  "project_id": null,
+  "timestamp": "2026-05-24 09:15",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Describe this image"
+    },
+    {
+      "role": "assistant",
+      "content": "I'm unable to see the image you're referring to. Could you please describe it or provide more details about what's in the image?"
+    }
+  ]
+}

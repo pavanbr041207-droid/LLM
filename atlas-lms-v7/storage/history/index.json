@@ -1,0 +1,67 @@
+[
+  {
+    "id": "401cfad9b788",
+    "title": "Population by District in Karnataka",
+    "colormap": "Blues",
+    "district_col": "District",
+    "value_col": "Population",
+    "session_id": "sess_1779691358056",
+    "project_id": null,
+    "timestamp": "2026-05-25 12:20",
+    "map_file": "401cfad9b788.png",
+    "csv_file": "401cfad9b788.csv",
+    "metadata_file": "401cfad9b788.json"
+  },
+  {
+    "id": "55a6548e8e5f",
+    "title": "Gdp Crore by District",
+    "colormap": "Reds",
+    "district_col": "District",
+    "value_col": "GDP_Crore",
+    "session_id": "manual_gen",
+    "project_id": null,
+    "timestamp": "2026-05-25 12:18",
+    "map_file": "55a6548e8e5f.png",
+    "csv_file": "55a6548e8e5f.csv",
+    "metadata_file": "55a6548e8e5f.json"
+  },
+  {
+    "id": "67f11d8fa4fa",
+    "title": "Gdp Crore by District",
+    "colormap": "Purples",
+    "district_col": "District",
+    "value_col": "GDP_Crore",
+    "session_id": "manual_gen",
+    "project_id": null,
+    "timestamp": "2026-05-25 12:18",
+    "map_file": "67f11d8fa4fa.png",
+    "csv_file": "67f11d8fa4fa.csv",
+    "metadata_file": "67f11d8fa4fa.json"
+  },
+  {
+    "id": "be73f68454bf",
+    "title": "Population by District in Karnataka",
+    "colormap": "Blues",
+    "district_col": "District",
+    "value_col": "Population",
+    "session_id": "sess_1779691358056",
+    "project_id": null,
+    "timestamp": "2026-05-25 12:17",
+    "map_file": "be73f68454bf.png",
+    "csv_file": "be73f68454bf.csv",
+    "metadata_file": "be73f68454bf.json"
+  },
+  {
+    "id": "65b2830cd226",
+    "title": "Population by District in Karnataka",
+    "colormap": "Blues",
+    "district_col": "District",
+    "value_col": "Population",
+    "session_id": "sess_1779691358056",
+    "project_id": null,
+    "timestamp": "2026-05-25 12:17",
+    "map_file": "65b2830cd226.png",
+    "csv_file": "65b2830cd226.csv",
+    "metadata_file": "65b2830cd226.json"
+  }
+]

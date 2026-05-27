@@ -1,0 +1,28 @@
+{
+  "latest_dataset": {
+    "id": "ee11fe69a45d",
+    "csv_path": "/Users/pavanbr/Desktop/choro_final_2/atlas_v5_fixed 2/backend/../storage/datasets/sess_1779691358056/ee11fe69a45d.csv",
+    "label": "Karnataka Population Dataset",
+    "columns": [
+      "District",
+      "Population"
+    ],
+    "rows": 21,
+    "geo_col": "District",
+    "value_col": "Population",
+    "geo_scope": "Karnataka",
+    "timestamp": "2026-05-25 12:16"
+  },
+  "latest_geo_scope": "Karnataka",
+  "latest_columns": [
+    "District",
+    "Population"
+  ],
+  "latest_geo_col": "District",
+  "latest_value_col": "Population",
+  "has_dataframe": true,
+  "updated": "2026-05-25 12:20",
+  "latest_map_id": "401cfad9b788",
+  "latest_map_title": "Population by District in Karnataka",
+  "latest_map_cmap": "Blues"
+}
